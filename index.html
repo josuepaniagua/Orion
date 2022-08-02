@@ -5,14 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
+    <link href='https://css.gg/pokemon.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" />
     <title>Game</title>
   </head>
   <body>
-    <section class="main-title">Welcome to Game</section>
-    <button class="play-btn">Play</button>
-    <button class="store-btn">Store</button>
-    <section class="scoreboard"></section>
+    <!--Main fieldset-->
+    <fieldset id="main-fieldset">
+      <!--title for page-->
+      <div id="wrapper-main">
+        <div class="title"> 
+          <h1>Welcome to Game</h1>
+        </div>
+      </div>
+         <!--body of the page i.e enter name input, buttons, score display-->
+      <div id="wrapper-body">
+        <div class="wrapper-input">
+          <input type="text" id="playerName" placeholder="Name..." >
+          <button type="button" id="enter-btn"><i class="gg-pokemon"></i>  Enter</button>
+        </div>
+        <!--button wrapper-->
+        <div id="wrapper-btns">
+          <a href="#" class="main-btn" id="play-btn">Play</a><br>
+          <a href="#" class="main-btn" id="store-btn">Store</a>
+        </div>
+        <!--score board tbody will be in javascript appended once the info is pulled from local storage-->
+        <div id="wrapper-score">
+          <h3 class="score-title">Score Board</h3>
+          <table id="score-display">
+            <th>Name</th>
+            <th>Score</th>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </fieldset>
+    <!--Game Fieldset-->
+    <fieldset id="game-fieldset" style="display:none"><!--undo display none to view fieldset-->
+      <div id="wrapper-top-btn">
+        <a href="#" class="main-btn" id="home-btn">Home</a>
+        <a href="#" class="main-btn" id="store-btn">Store</a>
+      </div>
+      <!--enemy hp-->
+      <div id="enemy-hp" style="float:right;border:2px solid black; width:260px;height:20px;margin-top:15px;"></div>
+      <!--Enemy position-->
+      <!--player hp -->
+      <!--players position-->
+      <!--<h3>Would you like to...</h3>-->
+      <!--player options-->
+      <!--buttons (hit/ run/ block )-->
+    </fieldset>
+    <!--store fieldset-->
+    <fieldset id="store-fieldset"  style="display:none"><!--undo display none to view fieldset-->
+      <div id="wrapper-top-btn">
+        <a href="#" class="main-btn" id="home-btn">Home</a>
+        <a href="#" class="main-btn" id="store-btn">Store</a>
+      </div>
+      <!--cards for different characters-->
+      <!--cards will display currency/ hp character from API-->
+    </fieldset>
 
     <script src="./script.js"></script>
   </body>
