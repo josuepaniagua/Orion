@@ -22,8 +22,8 @@ Steps to follow to install our project:
 
 ## Usage
 
-![alt text](assets/images/screenshot.png)
-![alt text](assets/images/screenshot.png)
+![alt text](assets/images/screenshot1.png)
+![alt text](assets/images/screenshot2.png)
 ## Credits
 
 Collaborators:
@@ -36,6 +36,7 @@ Collaborators:
 
 APIs:
 
+PokeAPI:
 
 Tutorials:
 
