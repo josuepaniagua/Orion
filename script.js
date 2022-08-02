@@ -34,6 +34,7 @@ const enemies = [
     }
 ]
 
+document.getElementById("play-btn").addEventListener("click", alert("Welcome to the game!"));
 // Temporary alert until we finish modal for text input
 alert("Welcome to the game!")
 player1.name = noNullAnswers('What is your name?')
@@ -83,7 +84,7 @@ for(let i =0; i <enemies.length; i++){
     }else{
         alert('You have entered the shop!')
         // add shop function here 
-        //shop()
+        shop()
     }
 
 }
@@ -107,5 +108,63 @@ function attack(attacker, target){
 //Start of the shop
 function shop(){
     const choice = prompt(`
-    Name: ${player1.name}`)
-}
+    Name: ${player1.name}, 
+    Gold: ${player1.gold} gold,
+    Hp: ${player1.hp} hp,
+    Attack: ${player1.attack} attack,
+    Accuracy: ${player1.accuracy} accuracy
+    \n Would you like to buy
+    1: potion(+10 health, cost 10 gold)
+    2: upgrade(+5 attack, cost 10 gold)
+    3: accuracy(+3 accuracy, cost 10 gold)
+    4: leave`)
+    
+    switch(choice.toLowerCase()){
+        case '1': 
+        case 'potion':
+            if (player1.hp === player1.maxHp) {
+                alert ('You are at full health!')
+                return shop();
+        }
+        if (player1.gold < 10) {
+            alert('You do not have enough gold!')
+            return shop();
+        }
+        player1.hp = Math.min(player1.hp + 10, player1.maxHp);
+        player1.gold = Math.max(player1.gold - 10, 0);
+        return shop();
+        break;
+
+    case '2':
+    case 'upgrade':
+        if (player1.gold < 10) {
+            alert('You do not have enough gold!')
+            return shop();
+        }
+        player1.gold = Math.max(player1.gold - 10, 0);
+        player1.attack += 5;
+        return shop();
+        break;
+
+    case '3':
+    case 'accuracy':
+        if (player1.gold < 10) {
+            alert('You do not have enough gold!')
+            return shop();
+        }
+        player1.gold = Math.max(player1.gold - 10, 0);
+        player1.accuracy += 3;
+        return shop();
+        break;
+
+    case '4':
+    case 'leave':
+    default:
+        let leaveShop = confirm('Are you sure you want to leave the shop?');
+        if (!leaveShop) {
+            return shop()
+        }
+        break;
+    }
+} 
+// Fix exit shop to return to enemy one 
