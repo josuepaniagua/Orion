@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to our turn based game, throughout your adventure you will encounter waves of enemies within the forest. The main character will learn to be a hero and will gather strength to make it out alive. There is a magical shop that you can interact with that allows you buy different characters and perks. Spend you gold wisely and help your characters get stronger.  
+Welcome to our turn-based game, throughout your adventure you will encounter waves of enemies within the forest. The main character will learn to be a hero and will gather strength to make it out alive. There is a magical shop that you can interact with that allows you to buy different characters and perks. Spend your gold wisely and help your characters get stronger.    
 
 ## Table of Contents
 
@@ -27,14 +27,18 @@ Steps to follow to install our project:
 ## Credits
 
 Collaborators:
-Patrick Tan - https://github.com/patctan
-Jaqwae Ellison - https://github.com/JaQwae
-Thomas Le - https://github.com/Thomasple13
-Mariana Hernandez-Chavez - https://github.com/Mariana21hch
-Richard Wilborn - https://github.com/richardwilborn
-Josue Paniagua - https://github.com/josuepaniagua
+- Patrick Tan - https://github.com/patctan
+- Jaqwae Ellison - https://github.com/JaQwae
+- Thomas Le - https://github.com/Thomasple13
+- Mariana Hernandez-Chavez - https://github.com/Mariana21hch
+- Richard Wilborn - https://github.com/richardwilborn
+- Josue Paniagua - https://github.com/josuepaniagua
 
 APIs:
+
+
+Tutorials:
+
 
 ## License
 
