@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/summer-pixel-22" rel="stylesheet">
     <link href='https://css.gg/pokemon.css' rel='stylesheet'>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Game</title>
   </head>
   <body>
     <!--Main fieldset-->
-    <fieldset id="main-fieldset">
+    <fieldset id="main-fieldset" style="display:none">
       <!--title for page-->
       <div id="wrapper-main">
         <div class="title"> 
-          <h1>Welcome to Game</h1>
+          <h1>Welcome to the <span class="iconify" data-icon="simple-icons:pokemon"></span> Game</h1>
         </div>
       </div>
          <!--body of the page i.e enter name input, buttons, score display-->
@@ -42,18 +44,37 @@
       </div>
     </fieldset>
     <!--Game Fieldset-->
-    <fieldset id="game-fieldset" style="display:none"><!--undo display none to view fieldset-->
+    <fieldset id="game-fieldset" ><!--undo display none to view fieldset-->
       <div id="wrapper-top-btn">
         <a href="#" class="main-btn" id="home-btn">Home</a>
         <a href="#" class="main-btn" id="store-btn">Store</a>
       </div>
-      <!--enemy hp-->
-      <div id="enemy-hp" style="float:right;border:2px solid black; width:260px;height:20px;margin-top:15px;"></div>
+      <div class="enemyinfo">
+        <!--enemy hp-->
+        <!--<div id="enemy-hp"></div>--> <!--not entierly sure if we will do a health bar?-->
+        <!--Enemy name and lable Hp-->
+        <span id="nameEnemyDisplay">Monster Name</span><br>
+        <span id="hPEnemy">00<i class="fal fa-heart-rate"></i></span>
+      </div><br>
       <!--Enemy position-->
-      <!--player hp -->
+      <div id="enemyPosition"></div>
       <!--players position-->
-      <!--<h3>Would you like to...</h3>-->
+      <div id="payerPosition"></div>
+      <!--player hp -->
+      <div class="playerinfo">
+        <!--player hp-->
+        <!--<div id="player-hp"></div>--> <!--not entierly sure if we will do a health bar?-->
+        <!--player name and lable Hp-->
+        <span id="namePlayerDisplay">Player Name</span><br>
+        <span id="hPPlayer">00<i class="fas fa-heart-rate"></i></span>
+      </div><br>
+      <h3 class="wwyd-placement">Would you like to...</h3>
       <!--player options-->
+      <div class="wrapper-button">
+        <button type="button" id="hit">Hit</button>
+        <button type="button" id="block">Block</button>
+        <button type="button" id="run">Run</button>
+      </div>
       <!--buttons (hit/ run/ block )-->
     </fieldset>
     <!--store fieldset-->
@@ -66,4 +87,5 @@
       <!--cards will display currency/ hp character from API-->
     </fieldset>
   </body>
+  <!--<script src="./script.js"></script>-->
 </html>
