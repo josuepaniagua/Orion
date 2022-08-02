@@ -14,7 +14,7 @@ const SearchPokemon = (api_obj) => {
 		.then( (data) => changeHtml(data))
 		.catch((err) => { //if some error happens, it shows the following message
 			pokemon_html.innerHTML = 
-			  `<h1> Some Error Occured.. Please revise your code! </h1>`;
+			  `<h1> Some Pokemon not found!. Please use exact name or id. </h1>`;
 		})
 
 	const changeHtml = (data) => {
