@@ -110,3 +110,7 @@ input{
     border-bottom: 15px solid #336E8C;
     border-radius: 14px;
 }
+
+.txt-container{
+    display: flex;
+}
