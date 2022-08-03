@@ -109,7 +109,6 @@ input{
     justify-content: space-between;
     border-bottom: 15px solid #FCC499;
     border-radius: 14px;
-    text-decoration-line: none;
 }
 
 .top-btn{
@@ -120,8 +119,16 @@ input{
     font-family: 'Summer Pixel 22', sans-serif; 
     font-size: 30px;
     line-height: 2;
+    text-decoration-line: none;
 }
 
+.wrapper-name-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 14px;
+    font-family: 'Summer Pixel 22', sans-serif; 
+}
 .enemyinfo{
     float: right;
     margin: 30px;
@@ -186,4 +193,5 @@ input{
     font-size: 30px;
     border-radius: 15px;
     text-align: center;
+    line-height: 2;
 }
