@@ -8,6 +8,10 @@
     <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
     <link href='https://css.gg/pokemon.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" />
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <title>Game</title>
   </head>
   <body>
@@ -27,8 +31,8 @@
         </div>
         <!--button wrapper-->
         <div id="wrapper-btns">
-          <a href="#" class="main-btn" id="play-btn">Play</a><br>
-          <a href="#" class="main-btn" id="store-btn">Store</a>
+          <button class="main-btn" id="play-btn">Play</button><br>
+          <button class="main-btn" id="store-btn">Store</button>
         </div>
         <!--score board tbody will be in javascript appended once the info is pulled from local storage-->
         <div id="wrapper-score">
@@ -49,6 +53,13 @@
       </div>
       <!--enemy hp-->
       <div id="enemy-hp" style="float:right;border:2px solid black; width:260px;height:20px;margin-top:15px;"></div>
+
+      <!-- Text box for game -->
+      <div class="txt-container">
+        <p></p>
+      </div>
+      <div class="btn-container"></div>
+
       <!--Enemy position-->
       <!--player hp -->
       <!--players position-->
@@ -62,6 +73,18 @@
         <a href="#" class="main-btn" id="home-btn">Home</a>
         <a href="#" class="main-btn" id="store-btn">Store</a>
       </div>
+
+      <div class="txt-container" id="shop-container">
+        <p id="buttonList"></p>
+      </div>
+      <!-- div for modal popup -->
+      <div id="ex1" class="modal">
+        <p>Thanks for clicking. That felt good.</p>
+        <a href="#" rel="modal:close">Close</a>
+      </div>
+      <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+
+      <div class="btn-container" id="shop-button"></div>
       <!--cards for different characters-->
       <!--cards will display currency/ hp character from API-->
     </fieldset>
