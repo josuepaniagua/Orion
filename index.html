@@ -6,86 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
-    <link href="http://fonts.cdnfonts.com/css/summer-pixel-22" rel="stylesheet">
     <link href='https://css.gg/pokemon.css' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Game</title>
   </head>
   <body>
-    <!--Main fieldset-->
-    <fieldset id="main-fieldset" style="display:none">
-      <!--title for page-->
-      <div id="wrapper-main">
-        <div class="title"> 
-          <h1>Welcome to the <span class="iconify" data-icon="simple-icons:pokemon"></span> Game</h1>
-        </div>
+    <!--title for page-->
+    <div id="wrapper-main">
+      <div class="title"> 
+        <h1>Welcome to the Game</h1>
       </div>
-         <!--body of the page i.e enter name input, buttons, score display-->
-      <div id="wrapper-body">
-        <div class="wrapper-input">
-          <input type="text" id="playerName" placeholder="Name..." >
-          <button type="button" id="enter-btn"><i class="gg-pokemon"></i>  Enter</button>
-        </div>
-        <!--button wrapper-->
-        <div id="wrapper-btns">
-          <a href="#" class="main-btn" id="play-btn">Play</a><br>
-          <a href="#" class="main-btn" id="store-btn">Store</a>
-        </div>
-        <!--score board tbody will be in javascript appended once the info is pulled from local storage-->
-        <div id="wrapper-score">
-          <h3 class="score-title">Score Board</h3>
-          <table id="score-display">
-            <th>Name</th>
-            <th>Score</th>
-            <tbody></tbody>
-          </table>
-        </div>
+    </div>
+        <!--body of the page i.e enter name input, buttons, score display-->
+    <div id="wrapper-body">
+      <div class="wrapper-input">
+        <input type="text" id="playerName" placeholder="Name..." >
+        <button type="button" id="enter-btn"><i class="gg-pokemon"></i>  Enter</button>
       </div>
-    </fieldset>
-    <!--Game Fieldset-->
-    <fieldset id="game-fieldset" ><!--undo display none to view fieldset-->
-      <div id="wrapper-top-btn">
-        <a href="#" class="main-btn" id="home-btn">Home</a>
+      <!--button wrapper-->
+      <div id="wrapper-btns">
+        <a href="./game.html" class="main-btn" id="play-btn">Play</a><br>
         <a href="#" class="main-btn" id="store-btn">Store</a>
       </div>
-      <div class="enemyinfo">
-        <!--enemy hp-->
-        <!--<div id="enemy-hp"></div>--> <!--not entierly sure if we will do a health bar?-->
-        <!--Enemy name and lable Hp-->
-        <span id="nameEnemyDisplay">Monster Name</span><br>
-        <span id="hPEnemy">00<i class="fal fa-heart-rate"></i></span>
-      </div><br>
-      <!--Enemy position-->
-      <div id="enemyPosition"></div>
-      <!--players position-->
-      <div id="payerPosition"></div>
-      <!--player hp -->
-      <div class="playerinfo">
-        <!--player hp-->
-        <!--<div id="player-hp"></div>--> <!--not entierly sure if we will do a health bar?-->
-        <!--player name and lable Hp-->
-        <span id="namePlayerDisplay">Player Name</span><br>
-        <span id="hPPlayer">00<i class="fas fa-heart-rate"></i></span>
-      </div><br>
-      <h3 class="wwyd-placement">Would you like to...</h3>
-      <!--player options-->
-      <div class="wrapper-button">
-        <button type="button" id="hit">Hit</button>
-        <button type="button" id="block">Block</button>
-        <button type="button" id="run">Run</button>
+      <!--score board tbody will be in javascript appended once the info is pulled from local storage-->
+      <div id="wrapper-score">
+        <h3 class="score-title">Score Board</h3>
+        <table id="score-display">
+          <th>Name</th>
+          <th>Score</th>
+          <tbody></tbody>
+        </table>
       </div>
-      <!--buttons (hit/ run/ block )-->
-    </fieldset>
-    <!--store fieldset-->
-    <fieldset id="store-fieldset"  style="display:none"><!--undo display none to view fieldset-->
-      <div id="wrapper-top-btn">
-        <a href="#" class="main-btn" id="home-btn">Home</a>
-        <a href="#" class="main-btn" id="store-btn">Store</a>
-      </div>
-      <!--cards for different characters-->
-      <!--cards will display currency/ hp character from API-->
-    </fieldset>
+    </div>
   </body>
   <!--<script src="./script.js"></script>-->
 </html>

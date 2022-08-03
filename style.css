@@ -109,6 +109,17 @@ input{
     justify-content: space-between;
     border-bottom: 15px solid #FCC499;
     border-radius: 14px;
+    text-decoration-line: none;
+}
+
+.top-btn{
+    text-align: center;
+    height: 51px;
+    width: 164px;
+    border:2px solid black;
+    font-family: 'Summer Pixel 22', sans-serif; 
+    font-size: 30px;
+    line-height: 2;
 }
 
 .enemyinfo{
