@@ -81,24 +81,27 @@ async function text(string){
     okBtn.remove()
 }
 
-async function moves(){
-    attackBtn = document.createElement("button")
-    attackBtn.setAttribute('id', 'hit')
-    runBtn = document.createElement("button")
-    runBtn.setAttribute('id', 'run')
-    blockBtn = document.createElement("button")
-    blockBtn.setAttribute('id', 'block')
+attackBtn = document.createElement("button")
+attackBtn.setAttribute('id', 'hit')
+runBtn = document.createElement("button")
+runBtn.setAttribute('id', 'run')
+blockBtn = document.createElement("button")
+blockBtn.setAttribute('id', 'block')
 
+async function moves(){
     textWords.textContent = 'What would you like to do?'
     attackBtn.textContent = "Attack"
     runBtn.textContent = "Run"
     blockBtn.textContent = "Block"
     moveButtons.append(attackBtn, runBtn, blockBtn)
-
+    moveButtons.style.visibility = 'display'
     return await new Promise((resolve,reject)=>{
         attackBtn.addEventListener("click",()=>{
             resolve('Attack')
-        })
+            moveButtons.removeChild(attackBtn)
+            moveButtons.removeChild(runBtn)
+            moveButtons.removeChild(blockBtn)
+        }, {once: true})
     })
     .then(results =>{
         return results
@@ -163,8 +166,6 @@ startGame()
         }
     }
 }
-
-
 
 
 //Function for attacking / missing target
