@@ -64,6 +64,8 @@ const enemies = [
     // }
 //});
 
+
+
 //Function for creating text
 async function text(string){
     textBoxText.innerHTML = `<pre>${string}</pre>`
