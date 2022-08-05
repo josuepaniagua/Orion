@@ -1,4 +1,6 @@
 //new DOM
+playButtonEl = document.querySelector('#play-btn')
+storeButtonEl = document.querySelector('#store-btn')
 textWords = document.querySelector(".wwyd-placement")
 moveButtons = document.querySelector('.wrapper-button')
 playerName = document.querySelector('.player-name')
@@ -10,7 +12,14 @@ shopButton = document.querySelector('store-btn')
 potionButtonEl = document.querySelector('.hp')
 upAttackButton = document.querySelector('.attack')
 upAccuracyButton = document.querySelector('.accuracy')
+gameScreenHomebutton = document.querySelector('#home-btn1')
+shopScreenHomeButton = document.querySelector('#home-btn2')
+leaveShopButton = document.querySelector('#leave-btn')
 
+//screens
+startScreen = document.querySelector('#wrapper-main')
+gameScreen = document.querySelector('#game-fieldset')
+shopScreen = document.querySelector('#store-fieldset')
 
 
 const player1 = {
@@ -83,14 +92,14 @@ async function text(string){
     okBtn.remove()
 }
 
-attackBtn = document.createElement("button")
-attackBtn.setAttribute('id', 'hit')
-runBtn = document.createElement("button")
-runBtn.setAttribute('id', 'run')
-blockBtn = document.createElement("button")
-blockBtn.setAttribute('id', 'block')
 
 async function moves(){
+    attackBtn = document.createElement("button")
+    attackBtn.setAttribute('id', 'hit')
+    runBtn = document.createElement("button")
+    runBtn.setAttribute('id', 'run')
+    blockBtn = document.createElement("button")
+    blockBtn.setAttribute('id', 'block')
     textWords.textContent = 'What would you like to do?'
     attackBtn.textContent = "Attack"
     runBtn.textContent = "Run"
@@ -111,16 +120,29 @@ async function moves(){
 //Logic for attacking and enemies showing up
 // Temporary await text until we finish modal for text input
 
-// playbuttonEl.addEventListener("click", ()=>{
-//     fieldSetScreen.style.display = 'block'
-//     startScreen.style.display = 'none'
-// })
+playButtonEl.addEventListener("click", ()=>{
+    gameScreen.style.display = 'block'
+    startScreen.style.display = 'none'
+    console.log('hello')
+})
+ 
+storeButtonEl.addEventListener("click",()=>{
+    startScreen.style.display = 'none'
+    update()
+    shopScreen.style.display = 'block'
+})
 
-// storeButtonEl.addEventListener("click",async ()=>{
-//     await shop()
-//     startScreen.style.display = 'none'
-//     storeScreen.style.display = 'block'
-// })
+gameScreenHomebutton.addEventListener("click", ()=>{
+    gameScreen.style.display = 'none'
+    startScreen.style.display = 'block'
+})
+
+shopScreenHomeButton.addEventListener("click", ()=>{
+    shopScreen.style.display = 'none'
+    startScreen.style.display = 'block'
+    console.log('Hello')
+})
+
 
 startGame()
 //Loop through enemies and choose to attack or run
@@ -142,6 +164,10 @@ startGame()
                 await text(`You defeated the ${currentEnemy.name}!`)
                 await text(`You have earned ${currentEnemy.gold} gold.`)
                 player1.gold += currentEnemy.gold
+                shop()
+                gameScreen.style.display = 'none'
+                update()
+                shopScreen.style.display = 'block'
                 break
             } else{
                 await attack(currentEnemy, player1)
@@ -183,7 +209,6 @@ async function attack(attacker, target){
     await text(`${target.name} now has ${target.hp}hp`)
 }
 
-update()
 //Start of the shop
 async function update(){
     playerName.textContent = `${player1.name}`
@@ -192,22 +217,48 @@ async function update(){
     attackAmount.textContent = `${player1.attack}`
     accuracyAmount.textContent = `${player1.accuracy}`
 }
+shop()
 
-async function shop(){
+function shop(){
     potionButtonEl.addEventListener("click", ()=>{
-        // if (player1.hp === player1.maxHp) {
-        //     await text ('You are at full health!')
-        //     return shop();
-        // }
-        // if (player1.gold < 10) {
-        //     await text('You do not have enough gold!')
-        //     return shop();
-        // }
+        if (player1.hp === player1.maxHp) {
+            text('You are at full health!')
+            console.log('hello')
+            return shop();
+        }
+        if (player1.gold < 10) {
+            text('You do not have enough gold!')
+            return shop();
+        }
         player1.hp = Math.min(player1.hp + 10, player1.maxHp);
         player1.gold = Math.max(player1.gold - 10, 0);
         return shop();
     })
+
+    upAttackButton.addEventListener("click", ()=>{
+        if (player1.gold < 10) {
+            text('You do not have enough gold!')
+            return shop();
+        }
+        player1.gold = Math.max(player1.gold - 10, 0);
+        player1.attack += 5;
+        return shop();
+    })
+
+    upAccuracyButton.addEventListener("click",()=>{
+        if (player1.gold < 10) {
+            text('You do not have enough gold!')
+            return shop();
+        }
+        player1.gold = Math.max(player1.gold - 10, 0);
+        player1.accuracy += 3;
+        return shop();
+    })
+    //something is wrong with this NEED TO FIX
+    update()
+    //Add Leave button
 }
+
 
 
 
@@ -248,9 +299,8 @@ playerOneCanvas.onclick = function () {
     playerOneHpBar.updateHealth(playerOneHealth);
 };
 
+
 frame();
-
-
 
     // switch(choice.toLowerCase()){
     //     case '1': 

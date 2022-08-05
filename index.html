@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <title>Game</title>
   </head>
+
   <body>
     <!--title for page-->
     <fieldset id="wrapper-main">
@@ -54,9 +55,13 @@
         <!--score board tbody will be in javascript appended once the info is pulled from local storage-->
       </div>
     </fieldset>
+
+
+
+    <!-- GAME SCREEN -->
     <fieldset id="game-fieldset" style="display:none">
         <div id="wrapper-top-btn">
-          <a href="#" class="top-btn" id="home-btn">Home</a>
+          <a href="#" class="top-btn" id="home-btn1">Home</a>
           <a href="#" class="top-btn" id="store-btn">Store</a>
       </div>
       <div class="wrapper-name-info">
@@ -92,49 +97,74 @@
       <!--player options-->
       <!--buttons (hit/ run/ block )-->
     </fieldset>
+
+
+    <!-- SHOP SCREEN -->
     <fieldset id="store-fieldset" style="display:none">
       <div id="wrapper-top-btn">
-        <a href="#" class="top-btn" id="home-btn">Home</a>
-        <a href="#" class="top-btn" id="store-btn">Game</a>
+        <a href="#" class="top-btn" id="home-btn2">Home</a>
+        <a href="#" class="top-btn" id="leave-btn">Leave</a>
       </div>
       <div id="wrapper-player-info">
         <table id="tbl-player-info">
             <tbody>
                 <tr>
                     <td>Player Name:</td>
-                    <td>test</td>
+                    <td class="player-name"></td>
                 </tr>
                 <tr>
                     <td>Gold:</td>
-                    <td>test</td>
+                    <td class="gold-amount"></td>
                 </tr>
                 <tr>
                     <td>Hp:</td>
-                    <td>test</td>
+                    <td class="hp-amount"></td>
                 </tr>
                 <tr>
-                    <td>Attack:</td>
-                    <td>test</td>
+                    <td> Attack:</td>
+                    <td class="attack-amount"></td>
                 </tr>
                 <tr>
                     <td>Accurancy:</td>
-                    <td>test</td>
+                    <td class="accuracy-amount"></td>
                 </tr>
             </tbody>
         </table>
       </div><br>
       <div class="container text-center wrapper-poke">
         <div class="row row-cols-4">
-          <div class="col card pokemon">
+
+          <div class="col card pokemon hp">
             <lable>Gold:</lable>
             <span id="poke-gold"></span>
-            <lable>Hp:</lable>
+            <lable>Potion</lable>
             <span id="poke-hp"></span>
           </div>
+
+          <div class="col card pokemon attack">
+            <lable>Gold:</lable>
+            <span id="poke-gold"></span>
+            <lable>Attack</lable>
+            <span id="poke-hp"></span>
+          </div>
+
+          <div class="col card pokemon accuracy">
+            <lable>Gold:</lable>
+            <span id="poke-gold"></span>
+            <lable>Accuracy</lable>
+            <span id="poke-hp"></span>
+          </div>
+
+          <div class="textBox">
+            <h3 class="wwyd-placement">Would you like to...</h3>
+        </div>
+
         </div>
       </div>
     </fieldset>
   </body>
+
+
   <script src = "assets/pokiapi.js"></script>
   <script src="./script.js"></script>
   <script src="./weatherAPI.js"></script>
