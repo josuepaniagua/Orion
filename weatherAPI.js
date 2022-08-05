@@ -46,6 +46,12 @@ function getCurrentWeather(lat, lon) {
 
         //grabs icon
         currentIcon = data.current.weather[0].icon;
-        displayingCurrentIcon(currentIcon);
+        // displayingCurrentIcon(currentIcon);
 
 }
+
+//display weather icon
+// function displayingCurrentIcon (){
+//     document.getElementById('current-weather-icon').src="https://openweathermap.org/img/w/"+ currentIcon +".png"; 
+//     currentIcon.textContent = currentIcon;
+// }
