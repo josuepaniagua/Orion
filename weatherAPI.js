@@ -45,6 +45,7 @@ function getCurrentWeather(lat, lon) {
     });
 }
 
+const weatherConditions = ['Thunderstorm', 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
 //display weather icon
 // function displayingCurrentIcon (){
 //     document.getElementById('current-weather-icon').src="https://openweathermap.org/img/w/"+ currentIcon +".png"; 
