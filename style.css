@@ -194,3 +194,19 @@ input{
     box-shadow: 2px 4px 8px 6px #cc0000;
     border:2px solid #cc0000;
 }
+
+
+
+/*______code for hp bar_____ */
+/* background color can be removed */
+html,
+body {
+    background: #FF8844;
+}
+
+canvas {
+    background: grey;
+    display: block;
+    margin: 0 auto;
+    border: solid 6px black;
+}
