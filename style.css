@@ -21,12 +21,15 @@
     flex-wrap: nowrap;
     justify-content: center;
     flex-direction: row;
+    align-items: flex-end;
 }
 input{
-    width:80%;
-    border-radius: 4px;
+    border-radius: 5px;
     border: 2px solid #3B4CCA;
     text-align: center;
+    width: 50%;
+    margin-left: 5px;
+    font-size: 15px;
 }
 
 #enter-btn{
@@ -52,6 +55,22 @@ input{
     color: #cc0000;
 }
 
+#wrapper-random-poke{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.randButton{
+    width: 138px;
+    height: 32px;
+    background: #3B4CCA;
+    color: white;
+    border-radius: 5px;
+}
 /*"play" "Store" positioning css*/
 #wrapper-btns{
     float: left;
@@ -174,7 +193,7 @@ input{
 .wrapper-button{
     position: fixed;
     top: 662px;
-    left: 324px;
+    left: 434px;
 
 }
 
@@ -194,28 +213,14 @@ input{
     border:2px solid #cc0000;
 }
 
-/* CSS for store */ 
-#wrapper-player-info{
-    width:100%;
-    display: flex;
-    justify-content: center;
-}
 
-#tbl-player-info{
-    font-size: 20px; 
-    font-family: 'Share-TechMono', sans-serif;
-}
 
-.wrapper-poke{
-    display: flex;
-    justify-content: center;
-}
+/*______code for hp bar_____ */
+/* background color can be removed */
 
-.card{
-    width: 190px;
-    height:260px;
-    background:#3B4CCA;
-    margin:15px;
-    color:white;
+canvas {
+    background: grey;
+    display: block;
+    margin: 0 auto;
+    border: solid 6px black;
 }
-
