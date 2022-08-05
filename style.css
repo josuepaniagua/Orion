@@ -110,7 +110,7 @@ input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 15px solid #FCC499;
+    border-bottom: 15px solid #cc0000;
     border-radius: 14px;
 }
 
@@ -149,7 +149,6 @@ input{
     background-color: #FAAA6D;
     border-radius: 15px;
     position: fixed;
-    top: 138px;
     right: 119px;
     box-shadow: 2px 4px 8px 6px;
 }
