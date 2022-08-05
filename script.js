@@ -1,16 +1,17 @@
-playbuttonEl = document.querySelector('#play-btn')
-storeButtonEl = document.querySelector('#store-btn')
-fieldSetScreen = document.querySelector('#game-fieldset')
-startScreen = document.querySelector('#main-fieldset')
-storeScreen = document.querySelector('#store-fieldset')
-textBox = document.querySelector('.textBox')
-shopContainer = document.querySelector("#shop-container p")
-modalEl = document.querySelector('.modal')
-modalText = document.querySelector(".modal p")
-
 //new DOM
 textWords = document.querySelector(".wwyd-placement")
 moveButtons = document.querySelector('.wrapper-button')
+playerName = document.querySelector('.player-name')
+goldAmount = document.querySelector('.gold-amount')
+hpAmount = document.querySelector('.hp-amount')
+attackAmount = document.querySelector('.attack-amount')
+accuracyAmount = document.querySelector('.accuracy-amount')
+shopButton = document.querySelector('store-btn')
+potionButtonEl = document.querySelector('.hp')
+upAttackButton = document.querySelector('.attack')
+upAccuracyButton = document.querySelector('.accuracy')
+
+
 
 const player1 = {
     maxHp: 100,
@@ -47,7 +48,6 @@ const enemies = [
         gold: 100,
     }
 ]
-
 
 
 //playbuttonEl.addEventListener("click",()=>{ 
@@ -96,13 +96,10 @@ async function moves(){
     runBtn.textContent = "Run"
     blockBtn.textContent = "Block"
     moveButtons.append(attackBtn, runBtn, blockBtn)
-    moveButtons.style.visibility = 'display'
     return await new Promise((resolve,reject)=>{
         attackBtn.addEventListener("click",()=>{
             resolve('Attack')
-            moveButtons.removeChild(attackBtn)
-            moveButtons.removeChild(runBtn)
-            moveButtons.removeChild(blockBtn)
+            moveButtons.innerHTML = ''
         }, {once: true})
     })
     .then(results =>{
@@ -126,7 +123,6 @@ async function moves(){
 // })
 
 startGame()
-
 //Loop through enemies and choose to attack or run
  async function startGame(){
     for(let i =0; i <enemies.length; i++){
@@ -187,56 +183,31 @@ async function attack(attacker, target){
     await text(`${target.name} now has ${target.hp}hp`)
 }
 
+update()
 //Start of the shop
+async function update(){
+    playerName.textContent = `${player1.name}`
+    goldAmount.textContent = `${player1.gold}`
+    hpAmount.textContent = `${player1.hp}`
+    attackAmount.textContent = `${player1.attack}`
+    accuracyAmount.textContent = `${player1.accuracy}`
+}
+
 async function shop(){
-
-    textBoxText.textContent = (`Name: ${player1.name}, 
-        Gold: ${player1.gold} gold,
-        Hp: ${player1.hp} hp,
-        Attack: ${player1.attack} attack,
-        Accuracy: ${player1.accuracy} accuracy
-        \n What would you like to buy:`)
-
-    //Give textBoxText container class name shop so we can target it in css to look different
-    shopContainer.innerHTML = (`<pre>${textBoxText.textContent}</pre>`)
-
-    potionBtn = document.createElement('button')
-    upgradeBtn = document.createElement('button')
-    accuracyBtn = document.createElement('button')
-    leaveBtn = document.createElement('button')
-    
-    potionBtn.textContent = "Potion(+10 health, cost 10 gold)"
-    upgradeBtn.textContent = "upgrade(+5 attack, cost 10 gold)"
-    accuracyBtn.textContent = "accuracy(+3 accuracy, cost 10 gold)"
-    leaveBtn.textContent = "leave"
-
-    potionModal = document.createElement('p')
-    potionModal.innerHTML = `<a href="#ex1" rel="modal:open">${potionBtn.textContent}</a>`
-    upgradeModal = document.createElement('p')
-    upgradeModal.innerHTML = `<a href="#ex1" rel="modal:open">${upgradeBtn.textContent}</a>`
-    accuracyModal = document.createElement('p')
-    accuracyModal.innerHTML = `<a href="#ex1" rel="modal:open">${accuracyBtn.textContent}</a>`
-    leaveModal = document.createElement('p')
-    leaveModal.innerHTML = `<a href="#ex1" rel="modal:open">${leaveBtn.textContent}</a>`
-
-    shopContainer.append(potionModal, upgradeModal, accuracyModal, leaveModal)
-
-    document.querySelector('#buttonList').addEventListener("click", (e)=>{
-        console.log(e.target)
-        if (player1.hp === player1.maxHp) {
-            console.log('hello')
-            modalText.textContent = 'You are at max health!'
-            return shop();
-        }
-        if (player1.gold < 10) {
-            modalText.textContent = 'You do not have enough gold!'
-            return shop();
-        }
+    potionButtonEl.addEventListener("click", ()=>{
+        // if (player1.hp === player1.maxHp) {
+        //     await text ('You are at full health!')
+        //     return shop();
+        // }
+        // if (player1.gold < 10) {
+        //     await text('You do not have enough gold!')
+        //     return shop();
+        // }
         player1.hp = Math.min(player1.hp + 10, player1.maxHp);
         player1.gold = Math.max(player1.gold - 10, 0);
-
         return shop();
     })
+}
 
 
 
@@ -328,5 +299,5 @@ frame();
     //     }
     //     break;
     // }
-} 
+// } 
 // Fix exit shop to return to enemy one 
