@@ -110,7 +110,7 @@ input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 15px solid #FCC499;
+    border-bottom: 15px solid #cc0000;
     border-radius: 14px;
 }
 
@@ -149,7 +149,6 @@ input{
     background-color: #FAAA6D;
     border-radius: 15px;
     position: fixed;
-    top: 138px;
     right: 119px;
     box-shadow: 2px 4px 8px 6px;
 }
@@ -194,3 +193,29 @@ input{
     box-shadow: 2px 4px 8px 6px #cc0000;
     border:2px solid #cc0000;
 }
+
+/* CSS for store */ 
+#wrapper-player-info{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+#tbl-player-info{
+    font-size: 20px; 
+    font-family: 'Share-TechMono', sans-serif;
+}
+
+.wrapper-poke{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: 190px;
+    height:260px;
+    background:#3B4CCA;
+    margin:15px;
+    color:white;
+}
+
