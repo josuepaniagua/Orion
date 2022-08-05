@@ -1,4 +1,10 @@
-# Game
+# The Legend of Orion 
+![alt text](assets/images/mushroom-base.png)
+
+## Github
+
+- Link for GitHub Repo: https://github.com/josuepaniagua/Orion
+- Link for GitHub Page: https://josuepaniagua.github.io/Orion
 
 ## Description
 
@@ -26,7 +32,7 @@ Steps to follow to install our project:
 ![alt text](assets/images/screenshot2.png)
 ## Credits
 
-Collaborators:
+### Collaborators:
 - Patrick Tan - https://github.com/patctan
 - Jaqwae Ellison - https://github.com/JaQwae
 - Thomas Le - https://github.com/Thomasple13
