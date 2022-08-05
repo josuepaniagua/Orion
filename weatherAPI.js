@@ -8,11 +8,6 @@ searchButton.addEventListener('click', handlingUserInput );
 function handlingUserInput() {
     let city = document.getElementById("userInput").value;
     getCoordinates(city);
-    displayName(city);
-    cityListPopulate(city);
-    var searchHistory = JSON.parse(localStorage.getItem("city")) || []
-    searchHistory.push(city)
-    localStorage.setItem("city", JSON.stringify(searchHistory)) 
 }
 
 
@@ -43,11 +38,11 @@ function getCurrentWeather(lat, lon) {
             return response.json();
     })
     .then(function (data) {
-
+        console.log(data)
         //grabs icon
-        currentIcon = data.current.weather[0].icon;
+        //currentIcon = data.current.weather[0].icon;
         // displayingCurrentIcon(currentIcon);
-
+    });
 }
 
 //display weather icon
