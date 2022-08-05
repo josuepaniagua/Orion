@@ -3,16 +3,18 @@ storeButtonEl = document.querySelector('#store-btn')
 fieldSetScreen = document.querySelector('#game-fieldset')
 startScreen = document.querySelector('#main-fieldset')
 storeScreen = document.querySelector('#store-fieldset')
-textBox = document.querySelector('.txt-container')
-textBoxText = document.querySelector(".txt-container p")
-moveBtnContainer = document.querySelector(".btn-container")
+textBox = document.querySelector('.textBox')
 shopContainer = document.querySelector("#shop-container p")
 modalEl = document.querySelector('.modal')
 modalText = document.querySelector(".modal p")
 
+//new DOM
+textWords = document.querySelector(".wwyd-placement")
+moveButtons = document.querySelector('.wrapper-button')
+
 const player1 = {
     maxHp: 100,
-    hp: 50,
+    hp: 100,
     attack: 10,
     accuracy: 10,
     gold: 10,
@@ -66,38 +68,42 @@ const enemies = [
 
 //Function for creating text
 async function text(string){
-    textBoxText.innerHTML = `<pre>${string}</pre>`
+    textWords.textContent = `${string}`
     okBtn = document.createElement("button")
     okBtn.textContent = "ok"
-    textBox.appendChild(okBtn)
+    textWords.appendChild(okBtn)
     await new Promise(function(resolve, reject){
         okBtn.addEventListener("click", ()=>{
             resolve()
         }, {once: true})
     })
-    textBoxText.innerHTML = ''
+    textWords.textContent = ''
     okBtn.remove()
 }
 
-async function moves(){
-    attackBtn = document.createElement("button")
-    runBtn = document.createElement("button")
-    miscBtn = document.createElement("button")
+attackBtn = document.createElement("button")
+attackBtn.setAttribute('id', 'hit')
+runBtn = document.createElement("button")
+runBtn.setAttribute('id', 'run')
+blockBtn = document.createElement("button")
+blockBtn.setAttribute('id', 'block')
 
-    textBoxText.textContent = 'What would you like to do?'
+async function moves(){
+    textWords.textContent = 'What would you like to do?'
     attackBtn.textContent = "Attack"
     runBtn.textContent = "Run"
-    miscBtn.textContent = "Misc"
-    moveBtnContainer.append(attackBtn, runBtn, miscBtn)
-    
+    blockBtn.textContent = "Block"
+    moveButtons.append(attackBtn, runBtn, blockBtn)
+    moveButtons.style.visibility = 'display'
     return await new Promise((resolve,reject)=>{
         attackBtn.addEventListener("click",()=>{
             resolve('Attack')
-        })
+            moveButtons.removeChild(attackBtn)
+            moveButtons.removeChild(runBtn)
+            moveButtons.removeChild(blockBtn)
+        }, {once: true})
     })
     .then(results =>{
-        console.log(results)
-        moveBtnContainer.innerHTML = ''
         return results
     })
 }
@@ -106,16 +112,16 @@ async function moves(){
 //Logic for attacking and enemies showing up
 // Temporary await text until we finish modal for text input
 
-playbuttonEl.addEventListener("click", ()=>{
-    fieldSetScreen.style.display = 'block'
-    startScreen.style.display = 'none'
-})
+// playbuttonEl.addEventListener("click", ()=>{
+//     fieldSetScreen.style.display = 'block'
+//     startScreen.style.display = 'none'
+// })
 
-storeButtonEl.addEventListener("click",async ()=>{
-    await shop()
-    startScreen.style.display = 'none'
-    storeScreen.style.display = 'block'
-})
+// storeButtonEl.addEventListener("click",async ()=>{
+//     await shop()
+//     startScreen.style.display = 'none'
+//     storeScreen.style.display = 'block'
+// })
 
 startGame()
 
@@ -162,11 +168,9 @@ startGame()
 }
 
 
-
-
 //Function for attacking / missing target
 async function attack(attacker, target){
-    textBoxText.textContent = "You attacked the enemy"
+    textWords.textContent = "You attacked the enemy"
     const miss = Math.floor(Math.random() * attacker.accuracy)
     if(miss === 0){
         await text(`${attacker.name} missed`)
