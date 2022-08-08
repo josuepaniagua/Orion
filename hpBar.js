@@ -21,6 +21,26 @@ updatePlayerHP(playerHpDisplay, playerValue, player1.hp);
 
 
 
+// progress bar goes off of percent
+enemiesValue = (enemies.hp/enemies.maxHp) * 100
+
+
+function updateEnemyHP (enemiesHp, value, enemiesHealthTotal) {
+    value = Math.round(value);
+    enemiesHpDisplay.querySelector(".enemy-hp-fill").style.width = `${value}%`; 
+    enemiesHpDisplay.querySelector("#enemy-hp-text").textContent = `${enemiesHealthTotal}`; 
+}
+
+const enemiesHpDisplay = document.querySelector('#enemy-hp-container')
+console.log(enemiesHpDisplay)
+
+updateEnemyHP(enemiesHpDisplay, enemiesValue, enemies[0].hp);
+
+
+
+
+
+
 
 
 
