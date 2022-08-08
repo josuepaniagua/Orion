@@ -1,10 +1,8 @@
-// In HTML we need this to go some where
-
-
-
+// linking to the enter button on home page
 let enterButton = document.getElementById('enter-btn');
 enterButton.addEventListener('click', handlingUserInput );
 
+// Passes user text into the function
 function handlingUserInput() {
     let city = document.getElementById("userInput").value;
     getCoordinates(city);
@@ -27,7 +25,7 @@ function getCoordinates(city) {
 }
 
 
-//Weather API 
+//looks up weather for the city entered
 function getCurrentWeather(lat, lon) {
     let requestUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat='+ lat +'&lon='+ lon +'&units=imperial&appid=9fa809658341d19670907599fff8fcdc';
     
@@ -35,6 +33,7 @@ function getCurrentWeather(lat, lon) {
     .then(function (response) {
         return response.json();
     })
+    // gets weather description
     .then(function (data) {
         // console.log(data.current.weather[0].main);
         let currentWeatherCondition = data.current.weather[0].main;

@@ -236,3 +236,30 @@ canvas {
     font-size: 30px;
 }
 /* timer */
+
+
+
+
+/* playerHp */
+#player-HP{
+    position: relative;
+    width: 210px;
+    height: 30px;
+    background: #419EAE;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+
+.player-hp-fill{
+    width: 0%;
+    height: 100%;
+    background: red;
+    border-radius: 10px;
+}
+
+#player-hp-text{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: white;
+}

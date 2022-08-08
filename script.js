@@ -266,8 +266,8 @@ function shop(){
 
 
 
-// // ______code for hp bar_____
-// let playerOneCanvas = document.getElementById("player-hp-bar");
+// // // ______code for hp bar_____
+// let playerOneCanvas = document.getElementById("hPPlayer");
 // let playerOneContext = playerOneCanvas.getContext("2d");
 
 // // canvas box sizing for player one
