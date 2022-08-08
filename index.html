@@ -16,14 +16,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <title>Game</title>
+    <title>The Legend of Orion</title>
   </head>
 
   <body>
     <!--title for page-->
     <fieldset id="wrapper-main">
       <div class="title"> 
-        <h1>Welcome to the Game</h1>
+        <h1>The Legend of Orion</h1>
       </div>
         <!--body of the page i.e enter name input, buttons, score display-->
       <div id="wrapper-body">
@@ -53,6 +53,19 @@
           <a href="#" class="main-btn" id="store-btn">Store</a>
         </div>
         <!--score board tbody will be in javascript appended once the info is pulled from local storage-->
+        <div id="wrapper-score">
+          <h3 class="score-title">Score Board</h3>
+          <table id="score-display">
+            <th>Name</th>
+            <th>Time</th>
+            <tbody>
+              <tr>
+                <th id="playername"></th>
+                <td id="time"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </fieldset>
 
@@ -96,6 +109,12 @@
       </div>
       <!--player options-->
       <!--buttons (hit/ run/ block )-->
+
+    <!-- timer -->
+    <div class="timerDisplay">
+        00 : 00 : 00 : 000
+     </div>
+     <!-- timer -->
     </fieldset>
 
 
