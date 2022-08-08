@@ -22,7 +22,6 @@ function getCoordinates(city) {
     .then(function (data) {
         let lat = data[0].lat;
         let lon = data[0].lon;
-        
         getCurrentWeather(lat, lon);
     });
 }
@@ -38,10 +37,7 @@ function getCurrentWeather(lat, lon) {
             return response.json();
     })
     .then(function (data) {
-        console.log(data)
-        //grabs icon
-        //currentIcon = data.current.weather[0].icon;
-        // displayingCurrentIcon(currentIcon);
+        console.log(data.current.weather[0].main);
     });
 }
 
