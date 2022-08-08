@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
-    <link href='https://css.gg/pokemon.css' rel='stylesheet'>
+    <script defer src="https://cdn.tailwindcss.com"></script>
+    <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet" />
+    <link href="https://css.gg/pokemon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <title>Game</title>
   </head>
@@ -15,19 +15,21 @@
     <fieldset id="main-fieldset">
       <!--title for page-->
       <div id="wrapper-main">
-        <div class="title"> 
+        <div class="title">
           <h1>Welcome to Game</h1>
         </div>
       </div>
-         <!--body of the page i.e enter name input, buttons, score display-->
+      <!--body of the page i.e enter name input, buttons, score display-->
       <div id="wrapper-body">
         <div class="wrapper-input">
-          <input type="text" id="playerName" placeholder="Name..." >
-          <button type="button" id="enter-btn"><i class="gg-pokemon"></i>  Enter</button>
+          <input type="text" id="playerName" placeholder="Name..." />
+          <button type="button" id="enter-btn">
+            <i class="gg-pokemon"></i> Enter
+          </button>
         </div>
         <!--button wrapper-->
         <div id="wrapper-btns">
-          <a href="#" class="main-btn" id="play-btn">Play</a><br>
+          <a href="#" class="main-btn" id="play-btn">Play</a><br />
           <a href="#" class="main-btn" id="store-btn">Store</a>
         </div>
         <!--score board tbody will be in javascript appended once the info is pulled from local storage-->
@@ -42,13 +44,23 @@
       </div>
     </fieldset>
     <!--Game Fieldset-->
-    <fieldset id="game-fieldset" style="display:none"><!--undo display none to view fieldset-->
+    <fieldset id="game-fieldset" style="display: none">
+      <!--undo display none to view fieldset-->
       <div id="wrapper-top-btn">
         <a href="#" class="main-btn" id="home-btn">Home</a>
         <a href="#" class="main-btn" id="store-btn">Store</a>
       </div>
       <!--enemy hp-->
-      <div id="enemy-hp" style="float:right;border:2px solid black; width:260px;height:20px;margin-top:15px;"></div>
+      <div
+        id="enemy-hp"
+        style="
+          float: right;
+          border: 2px solid black;
+          width: 260px;
+          height: 20px;
+          margin-top: 15px;
+        "
+      ></div>
       <!--Enemy position-->
       <!--player hp -->
       <!--players position-->
@@ -57,7 +69,8 @@
       <!--buttons (hit/ run/ block )-->
     </fieldset>
     <!--store fieldset-->
-    <fieldset id="store-fieldset"  style="display:none"><!--undo display none to view fieldset-->
+    <fieldset id="store-fieldset" style="display: none">
+      <!--undo display none to view fieldset-->
       <div id="wrapper-top-btn">
         <a href="#" class="main-btn" id="home-btn">Home</a>
         <a href="#" class="main-btn" id="store-btn">Store</a>
@@ -65,7 +78,26 @@
       <!--cards for different characters-->
       <!--cards will display currency/ hp character from API-->
     </fieldset>
-    
+
+    <img src="assets/bow-border.png" alt="bow border" id="topLeft" />
+    <img src="assets/bow-border.png" alt="bow border" id="topRight" />
+    <img src="assets/bow-border.png" alt="bow border" id="bottomLeft" />
+    <img src="assets/bow-border.png" alt="bow border" id="bottomRight" />
+
     <script src="./script.js"></script>
   </body>
+  <footer>
+    <p>
+      Collaborators<br />
+      <img src="assets/sword.png" alt="sword icon" id="leftSword" />
+      <img src="assets/sword.png" alt="sword icon" id="rightSword" />
+
+      <a href="https://github.com/JaQwae">JaQwae</a>
+      <a href="https://github.com/josuepaniagua">Josue</a>
+      <a href="https://github.com/Thomasple13">Thomas</a>
+      <a href="https://github.com/Mariana21hch">Mariana</a>
+      <a href="https://github.com/richardwilborn">Richard</a>
+      <a href="https://github.com/patctan">Patrick</a>
+    </p>
+  </footer>
 </html>
