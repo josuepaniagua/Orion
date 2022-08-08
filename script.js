@@ -266,42 +266,42 @@ function shop(){
 
 
 
-// ______code for hp bar_____
-let playerOneCanvas = document.getElementById("player-hp-bar");
-let playerOneContext = playerOneCanvas.getContext("2d");
+// // ______code for hp bar_____
+// let playerOneCanvas = document.getElementById("player-hp-bar");
+// let playerOneContext = playerOneCanvas.getContext("2d");
 
-// canvas box sizing for player one
-const playerOneCanvasWidth = playerOneCanvas.width = 300;
-const playerOneCanvasHeight = playerOneCanvas.height = 20;
+// // canvas box sizing for player one
+// const playerOneCanvasWidth = playerOneCanvas.width = 300;
+// const playerOneCanvasHeight = playerOneCanvas.height = 20;
 
-// moving the canvas to the top and bottom
-playerOneCanvas.style.marginTop = window.innerHeight / 2 - playerOneCanvasHeight / 2 + "px";
+// // moving the canvas to the top and bottom
+// playerOneCanvas.style.marginTop = window.innerHeight / 2 - playerOneCanvasHeight / 2 + "px";
 
-// link to player one health
-let playerOneHealth = 100;
+// // link to player one health
+// let playerOneHealth = 100;
 
-// actual health bar display for player one
-const playerOneHpBarWidth = 300;
-const playerOneHpBarHeight = 20;
-const x = playerOneCanvasWidth / 2 - playerOneHpBarWidth / 2;
-const y = playerOneCanvasHeight / 2 - playerOneHpBarHeight / 2;
+// // actual health bar display for player one
+// const playerOneHpBarWidth = 300;
+// const playerOneHpBarHeight = 20;
+// const x = playerOneCanvasWidth / 2 - playerOneHpBarWidth / 2;
+// const y = playerOneCanvasHeight / 2 - playerOneHpBarHeight / 2;
 
-const playerOneHpBar = new HpBar(x, y, playerOneHpBarWidth, playerOneHpBarHeight, playerOneHealth, "red");
+// const playerOneHpBar = new HpBar(x, y, playerOneHpBarWidth, playerOneHpBarHeight, playerOneHealth, "red");
 
-const frame = function () {
-    playerOneContext.clearRect(0, 0, playerOneCanvasWidth, playerOneCanvasHeight);
-    playerOneHpBar.show(playerOneContext);
-    requestAnimationFrame(frame);
-}
+// const frame = function () {
+//     playerOneContext.clearRect(0, 0, playerOneCanvasWidth, playerOneCanvasHeight);
+//     playerOneHpBar.show(playerOneContext);
+//     requestAnimationFrame(frame);
+// }
 
-// get rid of an attach to where ever damage is being taking
-playerOneCanvas.onclick = function () {
-    playerOneHealth -= 10;
-    playerOneHpBar.updateHealth(playerOneHealth);
-};
+// // get rid of an attach to where ever damage is being taking
+// playerOneCanvas.onclick = function () {
+//     playerOneHealth -= 10;
+//     playerOneHpBar.updateHealth(playerOneHealth);
+// };
 
 
-frame();
+// frame();
 
     // switch(choice.toLowerCase()){
     //     case '1': 

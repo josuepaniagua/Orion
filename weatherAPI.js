@@ -2,8 +2,8 @@
 
 
 
-const searchButton = document.getElementById('search-button');
-searchButton.addEventListener('click', handlingUserInput );
+let enterButton = document.getElementById('enter-btn');
+enterButton.addEventListener('click', handlingUserInput );
 
 function handlingUserInput() {
     let city = document.getElementById("userInput").value;
