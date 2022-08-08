@@ -224,3 +224,15 @@ canvas {
     margin: 0 auto;
     border: solid 6px black;
 }
+
+/* timer */
+.timerDisplay{
+    position: relative;
+    width: 92%;
+    left: 15%;
+    top: -210px;
+    font-family: 'Roboto mono',monospace;
+    color: #419EAE;
+    font-size: 30px;
+}
+/* timer */
