@@ -1,11 +1,8 @@
 /* main fieldset css*/
 .title{
     width:100%;
-    height:200px;
     margin-top: 50px;
-    text-align: center;
     font-family: 'Games', sans-serif;
-    font-size: 40px;
     border-bottom: 20px solid #3B4CCA;
     border-radius: 32px;
 }
@@ -238,3 +235,25 @@ input{
     color:white;
 }
 
+/*Tailwind CSS*/
+
+module.exports = {
+    theme: {
+      screens: {
+        'sm': {'min': '500px', 'max': '767px'},
+        // => @media (min-width: 640px and max-width: 767px) { ... }
+  
+        'md': {'min': '768px', 'max': '1023px'},
+        // => @media (min-width: 768px and max-width: 1023px) { ... }
+  
+        'lg': {'min': '1024px', 'max': '1279px'},
+        // => @media (min-width: 1024px and max-width: 1279px) { ... }
+  
+        'xl': {'min': '1280px', 'max': '1535px'},
+        // => @media (min-width: 1280px and max-width: 1535px) { ... }
+  
+        '2xl': {'min': '1536px'},
+        // => @media (min-width: 1536px) { ... }
+      },
+    }
+  }
