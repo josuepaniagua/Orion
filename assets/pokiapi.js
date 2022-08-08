@@ -30,8 +30,8 @@ const SearchPokemon = (api_obj) => {
 		pokemon_html.innerHTML = newHtml //add it into html
 		input.value = ""; //to reset the input line
 	}
-
 }
+
 
 
 function inputLength() { //checks if the input line input is not empty

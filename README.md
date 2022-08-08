@@ -1,4 +1,10 @@
-# Game
+# The Legend of Orion 
+![alt text](assets/images/mushroom-base.png)
+
+## Github
+
+- Link for GitHub Repo: https://github.com/josuepaniagua/Orion
+- Link for GitHub Page: https://josuepaniagua.github.io/Orion
 
 ## Description
 
@@ -10,7 +16,6 @@ Welcome to our turn-based game, throughout your adventure you will encounter wav
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Features](#features)
 
 ## Installation
 
@@ -22,11 +27,12 @@ Steps to follow to install our project:
 
 ## Usage
 
-![alt text](assets/images/screenshot1.png)
-![alt text](assets/images/screenshot2.png)
+For usage, try to make time to play our game. There are wonderful pokemon and characters that are wanting to be discovered.
+
+![alt text](assets/screenshots/screenshot1.png)
 ## Credits
 
-Collaborators:
+### Collaborators:
 - Patrick Tan - https://github.com/patctan
 - Jaqwae Ellison - https://github.com/JaQwae
 - Thomas Le - https://github.com/Thomasple13
@@ -34,16 +40,11 @@ Collaborators:
 - Richard Wilborn - https://github.com/richardwilborn
 - Josue Paniagua - https://github.com/josuepaniagua
 
-APIs:
+### APIs:
 
-PokeAPI:
-
-Tutorials:
-
+- PokeAPI: https://pokeapi.co/
+- Weather API, provided by Jaqwae Ellison: https://github.com/JaQwae/weatherDashboard
 
 ## License
 
 None
-
-## Features
-
