@@ -201,6 +201,7 @@ startGame()
 }
 
 
+
 //Function for attacking / missing target
 async function attack(attacker, target){
     textWords.textContent = "You attacked the enemy"
@@ -300,13 +301,6 @@ upAccuracyButton.addEventListener("click",()=>{
 //     playerOneHpBar.updateHealth(playerOneHealth);
 // };
 
-
-<<<<<<< HEAD
-// frame();
-=======
-
-frame();
->>>>>>> 35a0fa274639f696737ea628934cceb84466b30f
 
     // switch(choice.toLowerCase()){
     //     case '1': 

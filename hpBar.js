@@ -1,3 +1,32 @@
+
+
+
+// progress bar goes off of percent
+playerValue = (player1.hp/player1.maxHp) * 100
+
+
+function updatePlayerHP (playerHp, value, playerHealthTotal) {
+    value = Math.round(value);
+    playerHpDisplay.querySelector(".player-hp-fill").style.width = `${value}%`; 
+    playerHpDisplay.querySelector("#player-hp-text").textContent = `${playerHealthTotal}`; 
+}
+
+const playerHpDisplay = document.querySelector('#player-hp-container')
+console.log(playerHpDisplay)
+
+updatePlayerHP(playerHpDisplay, playerValue, player1.hp);
+
+
+
+
+
+
+
+
+
+
+
+
 // class HpBar {
 //     constructor(x, y, w, h, maxHealth, color) {
 //         this.x = x;

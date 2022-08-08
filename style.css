@@ -241,7 +241,7 @@ canvas {
 
 
 /* playerHp */
-#player-HP{
+#player-hp-container{
     position: relative;
     width: 210px;
     height: 30px;
@@ -258,6 +258,31 @@ canvas {
 }
 
 #player-hp-text{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: white;
+}
+
+
+/* playerHp */
+#enemy-hp-container{
+    position: relative;
+    width: 210px;
+    height: 30px;
+    background:  #FAAA6D;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+
+.enemy-hp-fill{
+    width: 0%;
+    height: 100%;
+    background: red;
+    border-radius: 10px;
+}
+
+#enemy-hp-text{
     position: absolute;
     top: 0;
     right: 5px;

@@ -77,11 +77,14 @@
           <span id="nameEnemyDisplay">Monster Name</span>
       </div>
       <div class="wrapper-hp">
-        <div id =player-HP>
-          <div class =player-hp-fill></div>
+        <div id = 'player-hp-container'>
+          <div class = 'player-hp-fill'></div>
           <span id="player-hp-text"><i class="fas fa-heart-rate"></i></span>
         </div>
-          <span id="hPEnemy">00<i class="fal fa-heart-rate"></i></span>
+        <div id ='enemy-hp-container'>
+          <div class = 'enemy-hp-fill'></div>
+          <span id="enemy-hp-text"><i class="fal fa-heart-rate"></i></span>
+        </div>
       </div>
         <!--Enemy position-->
       <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
@@ -187,5 +190,5 @@
   <script src = "assets/pokiapi.js"></script>
   <script src="./script.js"></script>
   <script src="./weatherAPI.js"></script>
-  <script src="./hpBar.js"
+  <script src="./hpBar.js"></script>
 </html>
