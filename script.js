@@ -19,7 +19,6 @@ leaveShopButton = document.querySelector("#leave-btn");
 enemyImg = document.querySelector("#enemyPosition img");
 enemyName = document.querySelector("#nameEnemyDisplay");
 playerNameScreen = document.querySelector("#namePlayerDisplay");
-//work on this in a bit
 usernameInput = document.querySelector("#userInput");
 
 //Pokemon img
@@ -38,7 +37,7 @@ const player1 = {
   hp: 100,
   attack: 10,
   accuracy: 10,
-  gold: 100,
+  gold: 15,
   name: "",
   img: "",
   pokemonName: "",
@@ -51,52 +50,39 @@ const enemies = [
     name: "Happy Mushroom",
     maxHp: 50,
     hp: 50,
-    attack: 10,
+    attack: 100,
     accuracy: 5,
-    gold: 15,
+    gold: 25,
     img: "./assets/images/mushroom-base.png",
-    hurtImg: "./assets/mushroom-hurt.png",
+    hurtImg: "./assets/images/mushroom-hurt.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
     hpTextEl: document.querySelector("#enemy-hp-text")
   },
   {
     name: "Birdy",
-    maxHp: 70,
-    hp: 70,
+    maxHp: 100,
+    hp: 100,
     attack: 15,
     accuracy: 5,
     gold: 35,
     img: "./assets/images/bluebird.png",
-    hurtImg: "./assets/bluebird-bald.png",
+    hurtImg: "./assets/images/bluebird-bald.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
     hpTextEl: document.querySelector("#enemy-hp-text")
   },
   {
     name: "Ssssneaky Ssssnake",
-    maxHp: 100,
-    hp: 100,
-    attack: 35,
+    maxHp: 150,
+    hp: 150,
+    attack: 25,
     accuracy: 3,
-    gold: 100,
+    gold: 50,
     img: "./assets/images/snake.png",
-    hurtImg: "./assets/snake-hurt.png",
+    hurtImg: "./assets/images/snake-hurt.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
     hpTextEl: document.querySelector("#enemy-hp-text")
   },
 ];
-
-// enterButtonEl.addEventListener("click",()=>{
-//     player1.name = noNullAnswers()
-//     function noNullAnswers(promptStr){
-//         player1.name = usernameInput.value
-//         if(player1.name){
-//             return answer
-//         }else {
-//             text('This is invalid!')
-//             return noNullAnswers(promptStr)
-//         }
-//     }
-// });
 
 //Function for creating text
 async function text(string) {
@@ -146,6 +132,7 @@ async function moves() {
 //Logic for attacking and enemies showing up
 
 playButtonEl.addEventListener("click", async() => {
+  startGame()
   gameScreen.style.display = "block";
   startScreen.style.display = "none";
   playerNameScreen.textContent = player1.name || 'Adventurer';
@@ -153,7 +140,6 @@ playButtonEl.addEventListener("click", async() => {
     await Randomize()
   }
   pokemonCardImg.src = player1.img
-  console.log("hello");
 });
 
 storeButtonEl.addEventListener("click", () => {
@@ -178,14 +164,16 @@ leaveShopButton.addEventListener("click", () => {
   gameScreen.style.display = "block";
 });
 
-startGame();
+
 //Loop through enemies and choose to attack or run
 async function startGame() {
+    let dead = false
     for (let i = 0; i < enemies.length; i++) {
     currentEnemy = enemies[i];
     enemyImg.src = currentEnemy.img;
     enemyName.textContent = currentEnemy.name;
     playerNameScreen.textContent = player1.name || 'Adventurer';
+    player1.name = 'Adventurer'
     console.log(player1.name)
     updateHP(currentEnemy)
     updateHP(player1)
@@ -211,8 +199,9 @@ async function startGame() {
         await attack(currentEnemy, player1);
       }
       if (player1.hp === 0) {
-        await text("You have been defeated. Game Over ):");
+        await text("You have been defeated. Game Over ): (Click Home button to start again!)");
         //back to home screen
+        dead = true
         break;
       }
     }
@@ -225,6 +214,8 @@ async function startGame() {
     }
   }
 }
+
+
 
 //Function for attacking / missing target
 async function attack(attacker, target) {
@@ -241,11 +232,14 @@ async function attack(attacker, target) {
   await text(`${attacker.name} did ${hit} damage to ${target.name}!`);
   target.hp = Math.max(target.hp - hit, 0);
   updateHP(target)
+  if(target.hurtImg){
+    enemyImg.src = target.hurtImg
+  }
   await text(`${target.name} now has ${target.hp}hp`);
-
+  if(target.hurtImg){
+    enemyImg.src = target.img
+  }
 }
-
-
 
 //Start of the shop
 async function update() {
