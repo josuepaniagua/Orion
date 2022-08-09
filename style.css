@@ -5,7 +5,7 @@
   margin-top: 50px;
   text-align: center;
   font-family: "Games", sans-serif;
-  font-size: 56px;
+  font-size: 40px;
   border-bottom: 20px solid #3b4cca;
   border-radius: 32px;
 }
@@ -21,12 +21,15 @@
   flex-wrap: nowrap;
   justify-content: center;
   flex-direction: row;
+  align-items: flex-end;
 }
 input {
-  width: 80%;
-  border-radius: 4px;
+  border-radius: 5px;
   border: 2px solid #3b4cca;
   text-align: center;
+  width: 50%;
+  margin-left: 5px;
+  font-size: 15px;
 }
 
 #enter-btn {
@@ -52,6 +55,22 @@ input {
   color: #cc0000;
 }
 
+#wrapper-random-poke {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.randButton {
+  width: 138px;
+  height: 32px;
+  background: #3b4cca;
+  color: white;
+  border-radius: 5px;
+}
 /*"play" "Store" positioning css*/
 #wrapper-btns {
   float: left;
@@ -73,6 +92,9 @@ input {
   border: 2px solid black;
   font-family: "Games", sans-serif;
   font-size: 30px;
+  line-height: 2;
+  text-decoration-line: none;
+  color: black;
 }
 
 .main-btn:hover {
@@ -110,8 +132,165 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 15px solid #336e8c;
+  border-bottom: 15px solid #cc0000;
   border-radius: 14px;
+}
+
+.top-btn {
+  text-align: center;
+  height: 51px;
+  width: 164px;
+  border: 2px solid black;
+  font-family: "Summer Pixel 22", sans-serif;
+  font-size: 30px;
+  line-height: 2;
+  text-decoration-line: none;
+  color: black;
+}
+
+.top-btn:hover {
+  text-decoration-line: none;
+  color: black;
+  transition-timing-function: linear;
+  background: linear-gradient(
+    0deg,
+    #cc0000 52%,
+    rgba(249, 247, 248, 0.3923766816143498) 53%,
+    white 100%
+  );
+}
+
+.wrapper-name-info,
+.wrapper-hp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 14px;
+  font-family: "Summer Pixel 22", sans-serif;
+  margin: 10px;
+  font-size: 30px;
+}
+
+#enemyPosition {
+  width: 550px;
+  height: 348px;
+  background-color: #faaa6d;
+  border-radius: 15px;
+  position: fixed;
+  right: 119px;
+  box-shadow: 2px 4px 8px 6px;
+}
+#payerPosition {
+  width: 550px;
+  height: 348px;
+  background-color: #419eae;
+  border-radius: 15px;
+  position: fixed;
+  top: 296px;
+  left: 60px;
+  box-shadow: 2px 4px 8px 6px;
+}
+
+.wwyd-placement {
+  position: fixed;
+  top: 657px;
+  left: 63px;
+}
+
+.wrapper-button {
+  position: fixed;
+  top: 662px;
+  left: 434px;
+}
+
+#hit,
+#block,
+#run {
+  height: 51px;
+  width: 164px;
+  border: 2px solid black;
+  font-family: "Summer Pixel 22", sans-serif;
+  font-size: 30px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 2;
+}
+
+#hit:hover,
+#block:hover,
+#run:hover {
+  box-shadow: 2px 4px 8px 6px #cc0000;
+  border: 2px solid #cc0000;
+}
+
+/*______code for hp bar_____ */
+/* background color can be removed */
+
+canvas {
+  background: grey;
+  display: block;
+  margin: 0 auto;
+  border: solid 6px black;
+}
+
+/* timer */
+.timerDisplay {
+  position: relative;
+  width: 92%;
+  left: 15%;
+  top: -210px;
+  font-family: "Roboto mono", monospace;
+  color: #419eae;
+  font-size: 30px;
+}
+/* timer */
+
+/* playerHp */
+#player-hp-container {
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background: #419eae;
+  border-radius: 10px;
+  /* overflow: hidden; */
+}
+
+.player-hp-fill {
+  width: 0%;
+  height: 100%;
+  background: red;
+  border-radius: 10px;
+}
+
+#player-hp-text {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: white;
+}
+
+/* playerHp */
+#enemy-hp-container {
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background: #faaa6d;
+  border-radius: 10px;
+  /* overflow: hidden; */
+}
+
+.enemy-hp-fill {
+  width: 0%;
+  height: 100%;
+  background: red;
+  border-radius: 10px;
+}
+
+#enemy-hp-text {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: white;
 }
 
 #topLeft {
@@ -131,33 +310,11 @@ input {
   position: fixed;
   bottom: 0;
   left: 0;
+  transform: rotate(180deg);
+}
+
+#leftsword {
+  transform: rotate(180deg);
+  size: 10%;
   transform: rotate(-90deg);
-}
-
-#bottomRight {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  transform: rotate(180deg);
-}
-
-#leftSword {
-  float: left;
-  transform: rotate(180deg);
-  width: 10%;
-  height: 10%;
-}
-
-#rightSword {
-  float: right;
-  width: 10%;
-  height: 10%;
-}
-
-footer {
-  text-align: center;
-  position: fixed;
-  bottom: 0px;
-  right: 50%;
-  transform: translateX(50%);
 }
