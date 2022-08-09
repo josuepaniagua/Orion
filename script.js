@@ -81,7 +81,6 @@ const enemies = [
 async function text(string){
     textWords.textContent = `${string}`
     okBtn = document.createElement("button")
-    okBtn.setAttribute('id', 'startTimer')
     okBtn.textContent = "ok"
     textWords.appendChild(okBtn)
     await new Promise(function(resolve, reject){
@@ -352,3 +351,9 @@ frame();
     // }
 // } 
 // Fix exit shop to return to enemy one 
+
+//display enemies
+var enemyimg = document.createElement("img");
+enemyimg.src = "./assets/images/bluebird.png";
+var block = document.getElementById("enemyPosition");
+block.appendChild(img);
