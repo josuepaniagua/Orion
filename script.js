@@ -351,9 +351,3 @@ upAccuracyButton.addEventListener("click",()=>{
     // }
 // } 
 // Fix exit shop to return to enemy one 
-
-//display enemies
-var enemyimg = document.createElement("img");
-enemyimg.src = "./assets/images/bluebird.png";
-var block = document.getElementById("enemyPosition");
-block.appendChild(img);
