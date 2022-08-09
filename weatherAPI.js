@@ -44,55 +44,31 @@ function getCurrentWeather(lat, lon) {
 }
 
 const weatherConditions = ['Thunderstorm', 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
-// weatherConditions[0] = 
-// weatherConditions[1] =
-// weatherConditions[2] =
-// weatherConditions[3] =
-// weatherConditions[4] =
-// weatherConditions[5] = 
-// weatherConditions[6] =
 
 function changingWeatherBackground (weatherConditions) {
     if (weatherConditions[0]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass('thunderstorm-condition');
-    };
-    if (weatherConditions[1]){
+    }else if (weatherConditions[1]) {
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass('drizzle-condition');
-    };
-    if (weatherConditions[2]){
+    } else if (weatherConditions[2]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass('rain-condition');
-    };
-    if (weatherConditions[3]){
+    } else if (weatherConditions[3]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("snow-condition");
-    };
-    if (weatherConditions[4]){
+    } else if (weatherConditions[4]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("atmosphere-condition");
-    };
-    if (weatherConditions[5]){
+    } else if (weatherConditions[5]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("clear-condition");
-    };
-    if (weatherConditions[6]){
+    } else (weatherConditions[6]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("clouds-condition");
     };
 }
-
-//if it clear then this picture pops up, equal to css property that will change a background image
-// you would need 7 different ids in the HTML and in CSS
-// if weathercondition[0] then this id will appear else X7 to get this to be dynamic in JS
-// setattr
-// function change background will be in hand
-
-// function displayClimate (currentWeatherCondition) {
-//     console.log(currentWeatherCondition);
-
-// }
 
 
 

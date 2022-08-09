@@ -370,7 +370,7 @@ footer {
 }
 
 .rain-condition{
-    background-image: url('./assets/images/Weather_Rain_Day Medium.jpeg');
+    background-image: url('./assets/images/rain-overlay.png');
 }
 
 .snow-condition{
