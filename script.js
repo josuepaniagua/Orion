@@ -23,9 +23,9 @@ playerNameScreen = document.querySelector("#namePlayerDisplay");
 usernameInput = document.querySelector("#userInput");
 
 //Pokemon img
-pokemonImg = document.querySelector(".pokemonSprite")
-pokemonCard = document.querySelector("#playerPosition")
-pokemonCardImg = document.querySelector('#playerPosition img')
+pokemonImg = document.querySelector(".pokemonSprite");
+pokemonCard = document.querySelector("#playerPosition");
+pokemonCardImg = document.querySelector("#playerPosition img");
 //screens
 startScreen = document.querySelector("#wrapper-main");
 gameScreen = document.querySelector("#game-fieldset");
@@ -43,7 +43,7 @@ const player1 = {
   img: "",
   pokemonName: "",
   hpEl: document.querySelector(".player-hp-fill"),
-  hpTextEl: document.querySelector("#player-hp-text")
+  hpTextEl: document.querySelector("#player-hp-text"),
 };
 
 const enemies = [
@@ -57,7 +57,7 @@ const enemies = [
     img: "./assets/images/mushroom-base.png",
     hurtImg: "./assets/mushroom-hurt.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
-    hpTextEl: document.querySelector("#enemy-hp-text")
+    hpTextEl: document.querySelector("#enemy-hp-text"),
   },
   {
     name: "Birdy",
@@ -69,7 +69,7 @@ const enemies = [
     img: "./assets/images/bluebird.png",
     hurtImg: "./assets/bluebird-bald.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
-    hpTextEl: document.querySelector("#enemy-hp-text")
+    hpTextEl: document.querySelector("#enemy-hp-text"),
   },
   {
     name: "Ssssneaky Ssssnake",
@@ -81,7 +81,7 @@ const enemies = [
     img: "./assets/images/snake.png",
     hurtImg: "./assets/snake-hurt.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
-    hpTextEl: document.querySelector("#enemy-hp-text")
+    hpTextEl: document.querySelector("#enemy-hp-text"),
   },
 ];
 
@@ -103,7 +103,7 @@ async function text(string) {
   textWords.textContent = `${string}`;
   okBtn = document.createElement("button");
   okBtn.textContent = "ok";
-  textWords.appendChild(okBtn);
+  textWords.appendChild(okBtn); //style this button
   await new Promise(function (resolve, reject) {
     okBtn.addEventListener(
       "click",
@@ -120,14 +120,14 @@ async function text(string) {
 async function moves() {
   attackBtn = document.createElement("button");
   attackBtn.setAttribute("id", "hit");
-//   runBtn = document.createElement("button");
-//   runBtn.setAttribute("id", "run");
-//   blockBtn = document.createElement("button");
-//   blockBtn.setAttribute("id", "block");
+  //   runBtn = document.createElement("button");
+  //   runBtn.setAttribute("id", "run");
+  //   blockBtn = document.createElement("button");
+  //   blockBtn.setAttribute("id", "block");
   textWords.textContent = "What would you like to do?";
   attackBtn.textContent = "Attack";
-//   runBtn.textContent = "Run";
-//   blockBtn.textContent = "Block";
+  //   runBtn.textContent = "Run";
+  //   blockBtn.textContent = "Block";
   moveButtons.append(attackBtn);
   return await new Promise((resolve, reject) => {
     attackBtn.addEventListener(
@@ -145,14 +145,14 @@ async function moves() {
 
 //Logic for attacking and enemies showing up
 
-playButtonEl.addEventListener("click", async() => {
+playButtonEl.addEventListener("click", async () => {
   gameScreen.style.display = "block";
   startScreen.style.display = "none";
-  playerNameScreen.textContent = player1.name || 'Adventurer';
-  if(!player1.img){
-    await Randomize()
+  playerNameScreen.textContent = player1.name || "Adventurer";
+  if (!player1.img) {
+    await Randomize();
   }
-  pokemonCardImg.src = player1.img
+  pokemonCardImg.src = player1.img;
   console.log("hello");
 });
 
@@ -181,14 +181,14 @@ leaveShopButton.addEventListener("click", () => {
 startGame();
 //Loop through enemies and choose to attack or run
 async function startGame() {
-    for (let i = 0; i < enemies.length; i++) {
+  for (let i = 0; i < enemies.length; i++) {
     currentEnemy = enemies[i];
     enemyImg.src = currentEnemy.img;
     enemyName.textContent = currentEnemy.name;
-    playerNameScreen.textContent = player1.name || 'Adventurer';
-    console.log(player1.name)
-    updateHP(currentEnemy)
-    updateHP(player1)
+    playerNameScreen.textContent = player1.name || "Adventurer";
+    console.log(player1.name);
+    updateHP(currentEnemy);
+    updateHP(player1);
     await text(`Round ${i + 1}: ${currentEnemy.name} has appeared!`);
     while (currentEnemy.hp >= 0) {
       const results = await moves();
@@ -220,7 +220,7 @@ async function startGame() {
       break;
     }
     if (i === enemies.length - 1) {
-      enemyImg.src = ''
+      enemyImg.src = "";
       await text("Congratulations! You Win!");
     }
   }
@@ -240,16 +240,13 @@ async function attack(attacker, target) {
   const hit = Math.floor(Math.random() * (max - min + 1)) + min;
   await text(`${attacker.name} did ${hit} damage to ${target.name}!`);
   target.hp = Math.max(target.hp - hit, 0);
-  updateHP(target)
+  updateHP(target);
   await text(`${target.name} now has ${target.hp}hp`);
-
 }
-
-
 
 //Start of the shop
 async function update() {
-  playerNameScreen.textContent = player1.name || 'Adventurer';
+  playerNameScreen.textContent = player1.name || "Adventurer";
   goldAmount.textContent = `${player1.gold}`;
   hpAmount.textContent = `${player1.hp}`;
   attackAmount.textContent = `${player1.attack}`;
@@ -294,5 +291,3 @@ upAccuracyButton.addEventListener("click", () => {
   update();
   return;
 });
-
-
