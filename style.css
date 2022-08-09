@@ -316,19 +316,6 @@ canvas {
   color: white;
 }
 
-#topLeft {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-#topRight {
-  position: fixed;
-  top: 0;
-  right: 0;
-  transform: rotate(90deg);
-}
-
 #bottomLeft {
   position: fixed;
   bottom: 0;
@@ -374,10 +361,3 @@ footer {
   justify-content: center;
 }
 
-.card {
-  width: 190px;
-  height: 260px;
-  background: #3b4cca;
-  margin: 15px;
-  color: white;
-}
