@@ -331,13 +331,34 @@ canvas {
   position: fixed;
   bottom: 0;
   left: 0;
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
 }
 
-#leftsword {
+#bottomRight {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#leftSword {
+  width: 10%;
+  height: 10%;
   transform: rotate(180deg);
-  size: 10%;
-  transform: rotate(-90deg);
+  float: left;
+}
+
+#rightSword {
+  width: 10%;
+  height: 10%;
+  float: right;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
 }
 #enemy-hp-text {
   position: absolute;
