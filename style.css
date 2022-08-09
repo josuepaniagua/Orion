@@ -1,0 +1,408 @@
+/* main fieldset css*/
+.title {
+  width: 100%;
+  margin-top: 50px;
+  font-family: "Games", sans-serif;
+  border-bottom: 20px solid #3b4cca;
+  border-radius: 32px;
+}
+/*CSS for main fieldset input, buttons, scoreboard*/
+#wrapper-body {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.wrapper-input {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  border-radius: 5px;
+  border: 2px solid #3b4cca;
+  text-align: center;
+  width: 50%;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+#enter-btn {
+  width: 110px;
+  background-color: white;
+  height: 40px;
+  align-items: center;
+  margin-top: 4px;
+  border-radius: 15px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  border: 2px dotted black;
+}
+
+#enter-btn:hover {
+  color: #cc0000;
+}
+/*pokeball css*/
+#enter-btn i:hover {
+  color: #cc0000;
+}
+
+#wrapper-random-poke {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.randButton {
+  width: 160px;
+  height: 32px;
+  background: #3b4cca !important;
+  color: white;
+  border-radius: 5px;
+  margin-top: 13px;
+}
+/*"play" "Store" positioning css*/
+#wrapper-btns {
+  float: left;
+  width: 40%;
+  margin-right: 15px;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+/*"play" "Store" css*/
+.main-btn {
+  text-align: center;
+  height: 51px;
+  width: 164px;
+  border: 2px solid black;
+  font-family: "Games", sans-serif;
+  font-size: 30px;
+  line-height: 2;
+  text-decoration-line: none;
+  color: black;
+}
+
+.main-btn:hover {
+  transition-timing-function: linear;
+  background: linear-gradient(
+    0deg,
+    #cc0000 52%,
+    rgba(249, 247, 248, 0.3923766816143498) 53%,
+    white 100%
+  );
+}
+/* Score board css*/
+#wrapper-score {
+  float: right;
+  width: 40%;
+  margin-right: 15px;
+  margin-top: 20px;
+  padding: 10px;
+}
+.score-title {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #3b4cca;
+}
+
+#score-display {
+  width: 100%;
+}
+
+/*CSS for the game fieldset*/
+/*Top buttons CSS*/
+#wrapper-top-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 15px solid #cc0000;
+  border-radius: 14px;
+}
+
+.top-btn {
+  text-align: center;
+  height: 51px;
+  width: 164px;
+  border: 2px solid black;
+  font-family: "Summer Pixel 22", sans-serif;
+  font-size: 30px;
+  line-height: 2;
+  text-decoration-line: none;
+  color: black;
+}
+
+.top-btn:hover {
+  text-decoration-line: none;
+  color: black;
+  transition-timing-function: linear;
+  background: linear-gradient(
+    0deg,
+    #cc0000 52%,
+    rgba(249, 247, 248, 0.3923766816143498) 53%,
+    white 100%
+  );
+}
+
+.wrapper-name-info,
+.wrapper-hp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 14px;
+  font-family: "Summer Pixel 22", sans-serif;
+  margin: 10px;
+  font-size: 30px;
+}
+
+#enemyPosition {
+  width: 550px;
+  height: 348px;
+  background-color: transparent;
+  border-radius: 15px;
+  position: fixed;
+  right: 119px;
+}
+#playerPosition {
+  width: 550px;
+  height: 348px;
+  background-color: transparent;
+  border-radius: 15px;
+  position: fixed;
+  top: 296px;
+  left: 60px;
+}
+
+#forest-bg {
+  position: absolute;
+  z-index: -1;
+}
+
+#okBtn {
+  background-image: url("assets/images/ok.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+#okBtn span {
+  display: none;
+}
+
+.wwyd-placement {
+  position: fixed;
+  top: 657px;
+  left: 63px;
+}
+
+.wrapper-button {
+  position: fixed;
+  top: 662px;
+  left: 434px;
+}
+
+#hit,
+#block,
+#run {
+  height: 51px;
+  width: 164px;
+  border: 2px solid black;
+  font-family: "Summer Pixel 22", sans-serif;
+  font-size: 30px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 2;
+}
+
+#hit:hover,
+#block:hover,
+#run:hover {
+  box-shadow: 2px 4px 8px 6px #cc0000;
+  border: 2px solid #cc0000;
+}
+
+/*______code for hp bar_____ */
+/* background color can be removed */
+
+canvas {
+  background: grey;
+  display: block;
+  margin: 0 auto;
+  border: solid 6px black;
+}
+
+/* playerHp */
+#player-hp-container {
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background: #419eae;
+  border-radius: 10px;
+  /* overflow: hidden; */
+}
+
+/* timer */
+
+
+.player-hp-fill {
+  width: 0%;
+  height: 100%;
+  background: red;
+  border-radius: 10px;
+  transition: width 1s;
+}
+
+#player-hp-text {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: white;
+}
+/* CSS for store */
+#wrapper-player-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#tbl-player-info {
+  font-size: 20px;
+  font-family: "Share-TechMono", sans-serif;
+}
+
+.wrapper-poke {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 190px;
+  height: 260px;
+  background: #3b4cca;
+  margin: 15px;
+  color: white;
+}
+
+/* playerHp */
+#enemy-hp-container {
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background: #faaa6d;
+  border-radius: 10px;
+  /* overflow: hidden; */
+}
+
+.enemy-hp-fill {
+  width: 0%;
+  height: 100%;
+  background: red;
+  border-radius: 10px;
+  transition: width 1s;
+}
+
+#enemy-hp-text {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: white;
+}
+
+#bottomLeft {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+#bottomRight {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+#leftSword {
+  width: 62px;
+  height: 65px;
+  transform: rotate(180deg);
+  float: left;
+  position: absolute;
+  /* bottom: 0; */
+  left: 386px;
+  top: 169%;
+}
+
+#rightSword {
+  width: 62px;
+  height: 65px;
+  float: left;
+  position: absolute;
+  right: 386px;
+  top: 169%;
+}
+
+#collab {
+  position: absolute;
+  right: 37%;
+  top: 174%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+/*#wrapper-footer {
+  display:flex;
+}*/
+
+#enemy-hp-text {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: white;
+}
+.wrapper-poke {
+  display: flex;
+  justify-content: center;
+}
+
+.thunderstorm-condition {
+  background-image: url("./assets/images/Weather_Overcast_Day Medium.jpeg");
+}
+
+.drizzle-condition {
+  background-image: url("./assets/images/Weather_Fog_Day Medium.jpeg");
+}
+
+.rain-condition {
+  background-image: url("./assets/images/rain-overlay.png");
+}
+
+.snow-condition {
+  background-image: url("./assets/images/Weather_Snow_Day Medium.jpeg");
+}
+
+.atmosphere-condition {
+  background-image: url("./assets/images/Weather_Windy_Day Medium.jpeg");
+}
+
+.clear-condition {
+  background-image: url("./assets/images/Weather_Clear_Day Medium.jpeg");
+}
+
+.clouds-condition {
+  background-image: url("./assets/images/Weather_Partly_Cloudy_Day Medium.jpeg");
+}
