@@ -247,6 +247,7 @@ canvas {
   height: 100%;
   background: red;
   border-radius: 10px;
+  transition: width 1s;
 }
 
 #player-hp-text {
@@ -295,6 +296,7 @@ canvas {
   height: 100%;
   background: red;
   border-radius: 10px;
+  transition: width 1s;
 }
 
 #enemy-hp-text {
