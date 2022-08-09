@@ -186,6 +186,11 @@ input {
   left: 60px;
 }
 
+#forest-bg {
+  position: absolute;
+  z-index: -1;
+}
+
 .wwyd-placement {
   position: fixed;
   top: 657px;
