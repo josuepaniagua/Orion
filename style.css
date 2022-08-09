@@ -31,16 +31,16 @@ input {
 #enter-btn {
   width: 110px;
   background-color: white;
-    height: 40px;
-    align-items: center;
-    margin-top: 4px;
-    border-radius: 15px;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    border: 2px dotted black;
+  height: 40px;
+  align-items: center;
+  margin-top: 4px;
+  border-radius: 15px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  border: 2px dotted black;
 }
 
 #enter-btn:hover {
@@ -175,7 +175,6 @@ input {
   border-radius: 15px;
   position: fixed;
   right: 119px;
-  
 }
 #playerPosition {
   width: 550px;
@@ -185,7 +184,11 @@ input {
   position: fixed;
   top: 296px;
   left: 60px;
-  
+}
+
+#forest-bg {
+  position: absolute;
+  z-index: -1;
 }
 
 .wwyd-placement {
@@ -340,14 +343,14 @@ canvas {
   top: 169%;
 }
 
-#collab{
+#collab {
   position: absolute;
-    right: 37%;
-    top: 174%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
+  right: 37%;
+  top: 174%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 /*#wrapper-footer {
   display:flex;
@@ -364,31 +367,30 @@ canvas {
   justify-content: center;
 }
 
-.thunderstorm-condition{
-    background-image: url('./assets/images/Weather_Overcast_Day Medium.jpeg');
+.thunderstorm-condition {
+  background-image: url("./assets/images/Weather_Overcast_Day Medium.jpeg");
 }
 
-.drizzle-condition{
-    background-image: url('./assets/images/Weather_Fog_Day Medium.jpeg');
+.drizzle-condition {
+  background-image: url("./assets/images/Weather_Fog_Day Medium.jpeg");
 }
 
-.rain-condition{
-    background-image: url('./assets/images/rain-overlay.png');
+.rain-condition {
+  background-image: url("./assets/images/rain-overlay.png");
 }
 
-.snow-condition{
-    background-image: url('./assets/images/Weather_Snow_Day Medium.jpeg');
+.snow-condition {
+  background-image: url("./assets/images/Weather_Snow_Day Medium.jpeg");
 }
 
-.atmosphere-condition{
-    background-image: url('./assets/images/Weather_Windy_Day Medium.jpeg');
+.atmosphere-condition {
+  background-image: url("./assets/images/Weather_Windy_Day Medium.jpeg");
 }
 
-.clear-condition{
-    background-image: url('./assets/images/Weather_Clear_Day Medium.jpeg');
+.clear-condition {
+  background-image: url("./assets/images/Weather_Clear_Day Medium.jpeg");
 }
 
-.clouds-condition{
-    background-image: url('./assets/images/Weather_Partly_Cloudy_Day Medium.jpeg');
+.clouds-condition {
+  background-image: url("./assets/images/Weather_Partly_Cloudy_Day Medium.jpeg");
 }
-
