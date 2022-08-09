@@ -252,6 +252,8 @@ canvas {
   /* overflow: hidden; */
 }
 
+/* timer */
+
 .player-hp-fill {
   width: 0%;
   height: 100%;
@@ -365,5 +367,17 @@ footer {
   position: absolute;
   top: 0;
   right: 5px;
+  color: white;
+}
+.wrapper-poke {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 190px;
+  height: 260px;
+  background: #3b4cca;
+  margin: 15px;
   color: white;
 }
