@@ -53,13 +53,27 @@ weatherConditions[5] =
 weatherConditions[6] =
 
 function changingWeatherBackground (weatherConditions) {
-    if (weatherConditions[0]){};
-    if (weatherConditions[1]){};
-    if (weatherConditions[2]){};
-    if (weatherConditions[3]){};
-    if (weatherConditions[4]){};
-    if (weatherConditions[5]){};
-    if (weatherConditions[6]){};
+    if (weatherConditions[0]){
+
+    };
+    if (weatherConditions[1]){
+
+    };
+    if (weatherConditions[2]){
+
+    };
+    if (weatherConditions[3]){
+
+    };
+    if (weatherConditions[4]){
+
+    };
+    if (weatherConditions[5]){
+
+    };
+    if (weatherConditions[6]){
+        
+    };
 }
 
 //if it clear then this picture pops up, equal to css property that will change a background image
