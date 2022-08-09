@@ -12,14 +12,14 @@ shopButton = document.querySelector('store-btn')
 potionButtonEl = document.querySelector('.hp')
 upAttackButton = document.querySelector('.attack')
 upAccuracyButton = document.querySelector('.accuracy')
-enterButtonEl = document.querySelector('enter-btn')
+enterButtonEl = document.querySelector('#enter-btn')
 gameScreenHomebutton = document.querySelector('#home-btn1')
 shopScreenHomeButton = document.querySelector('#home-btn2')
 leaveShopButton = document.querySelector('#leave-btn')
 enemyImg = document.querySelector("#enemyPosition img")
 enemyName = document.querySelector("#nameEnemyDisplay")
 playerNameScreen = document.querySelector("#namePlayerDisplay")
-// usernameInput = document.querySelector("#userInput")
+usernameInput = document.querySelector("#userInput")
 //screens
 startScreen = document.querySelector('#wrapper-main')
 gameScreen = document.querySelector('#game-fieldset')
@@ -70,13 +70,13 @@ const enemies = [
 
 
 // enterButtonEl.addEventListener("click",()=>{ 
-//     player1.name = noNullAnswers('What is your name?')
+//     player1.name = noNullAnswers()
 //     function noNullAnswers(promptStr){
-//         const answer = usernameInput.textContent
-//         if(answer){
+//         player1.name = usernameInput.value
+//         if(player1.name){
 //             return answer
 //         }else {
-//             await text('This is invalid!')
+//             text('This is invalid!')
 //             return noNullAnswers(promptStr)
 //         }
 //     }
