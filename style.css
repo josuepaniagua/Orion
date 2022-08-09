@@ -219,7 +219,7 @@ input {
   box-shadow: 2px 4px 8px 6px #cc0000;
   border: 2px solid #cc0000;
 }
- commit'
+
 /*______code for hp bar_____ */
 /* background color can be removed */
 
@@ -361,3 +361,30 @@ footer {
   justify-content: center;
 }
 
+.thunderstorm-condition{
+    background-image: url('./assets/images/Weather_Overcast_Day Medium.jpeg');
+}
+
+.drizzle-condition{
+    background-image: url('./assets/images/Weather_Fog_Day Medium.jpeg');
+}
+
+.rain-condition{
+    background-image: url('./assets/images/Weather_Rain_Day Medium.jpeg');
+}
+
+.snow-condition{
+    background-image: url('./assets/images/Weather_Snow_Day Medium.jpeg');
+}
+
+.atmosphere-condition{
+    background-image: url('./assets/images/Weather_Windy_Day Medium.jpeg');
+}
+
+.clear-condition{
+    background-image: url('./assets/images/Weather_Clear_Day Medium.jpeg');
+}
+
+.clouds-condition{
+    background-image: url('./assets/images/Weather_Partly_Cloudy_Day Medium.jpeg');
+}

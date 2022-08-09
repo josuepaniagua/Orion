@@ -6,7 +6,7 @@ enterButton.addEventListener('click', handlingUserInput );
 function handlingUserInput() {
     let city = document.getElementById("userInput").value;
     getCoordinates(city);
-    // displayClimate(currentWeatherCondition);
+    changingWeatherBackground (weatherConditions);
 }
 
 
@@ -44,35 +44,42 @@ function getCurrentWeather(lat, lon) {
 }
 
 const weatherConditions = ['Thunderstorm', 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
-weatherConditions[0] = 
-weatherConditions[1] =
-weatherConditions[2] =
-weatherConditions[3] =
-weatherConditions[4] =
-weatherConditions[5] = 
-weatherConditions[6] =
+// weatherConditions[0] = 
+// weatherConditions[1] =
+// weatherConditions[2] =
+// weatherConditions[3] =
+// weatherConditions[4] =
+// weatherConditions[5] = 
+// weatherConditions[6] =
 
 function changingWeatherBackground (weatherConditions) {
     if (weatherConditions[0]){
-
+        $('#game-fieldset').removeClass('clear-condition');
+        $('#game-fieldset').addClass('thunderstorm-condition');
     };
     if (weatherConditions[1]){
-
+        $('#game-fieldset').removeClass('clear-condition');
+        $('#game-fieldset').addClass('drizzle-condition');
     };
     if (weatherConditions[2]){
-
+        $('#game-fieldset').removeClass('clear-condition');
+        $('#game-fieldset').addClass('rain-condition');
     };
     if (weatherConditions[3]){
-
+        $('#game-fieldset').removeClass('clear-condition');
+        $('#game-fieldset').addClass("snow-condition");
     };
     if (weatherConditions[4]){
-
+        $('#game-fieldset').removeClass('clear-condition');
+        $('#game-fieldset').addClass("atmosphere-condition");
     };
     if (weatherConditions[5]){
-
+        $('#game-fieldset').removeClass('clear-condition');
+        $('#game-fieldset').addClass("clear-condition");
     };
     if (weatherConditions[6]){
-        
+        $('#game-fieldset').removeClass('clear-condition');
+        $('#game-fieldset').addClass("clouds-condition");
     };
 }
 
