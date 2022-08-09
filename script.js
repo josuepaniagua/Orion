@@ -84,7 +84,6 @@ const enemies = [
 async function text(string) {
   textWords.textContent = `${string}`;
   okBtn = document.createElement("button");
-  okBtn.setAttribute("id", "startTimer");
   okBtn.textContent = "ok";
   textWords.appendChild(okBtn);
   await new Promise(function (resolve, reject) {
