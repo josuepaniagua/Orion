@@ -26,7 +26,6 @@ async function getCoordinates(city) {
 }
 
 
-let currentWeatherCondition;
 //looks up weather for the city entered
 async function getCurrentWeather(lat, lon) {
     
@@ -44,8 +43,11 @@ async function getCurrentWeather(lat, lon) {
         changingWeatherBackground(currentWeatherCondition);
     });
 }
+
+// possible weather conditions
 const weatherConditions = ['Thunderstorm', 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
 
+// selecting weather background
 function changingWeatherBackground (currentWeatherCondition) {
     if (currentWeatherCondition == weatherConditions[0]){
         $('#game-fieldset').removeClass('clear-condition');
@@ -72,11 +74,3 @@ function changingWeatherBackground (currentWeatherCondition) {
         return
     }
 }
-
-
-
-//display weather icon
-// function displayingCurrentIcon (){
-//     document.getElementById('current-weather-icon').src="https://openweathermap.org/img/w/"+ currentIcon +".png"; 
-//     currentIcon.textContent = currentIcon;
-// }
