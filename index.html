@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
     <link href='https://css.gg/pokemon.css' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -23,25 +23,25 @@
     <!--title for page-->
     <fieldset id="wrapper-main">
       <div class="title"> 
-        <h1>The Legend of Orion</h1>
+        <h1 class="text-center 2xl:text-8xl lx:text-8xl lg:text-8xl md:text-6xl sm:text-5xl">The Legend of Orion</h1>
       </div>
         <!--body of the page i.e enter name input, buttons, score display-->
       <div id="wrapper-body">
         <div class="wrapper-input">
           <input type="text" id="playerName" placeholder="Name..." >
           <input type="text" id="userInput"  placeholder="Enter a city">
+          <button type="button" id="enter-btn"><i class="gg-pokemon place-items-center"></i>  Enter</button>
         </div> 
-          <button type="button" id="enter-btn"><i class="gg-pokemon"></i>  Enter</button>
-        </div>
-        <div class = "search zone">
+      </div>
+        <div class = "search zone flex justify-center grid-flow-col auto-cols-max">
           <div class= "searchBar">
             <input hidden id="userinput" class = "searchTerm" type="text" placeholder="enter pokemon name or id..">
-            <button hidden type="submit" class = "searchButton" > Search</button>
+            <button hidden type="submit" class = "searchButton"> Search</button>
           </div>
-          <button type= "submit" class="randButton" id="random"> Random Pokemon! </button>
+          <button type= "submit" class="randButton" id="random"> Pick your Pokemon! </button>
         </div>
-        <div class = "pokemon zone">
-          <h1 id="initial"> Pokemon placeholder </h1>
+        <div class = "pokemon zone flex justify-center grid-flow-col auto-cols-max">
+          <h1 id="initial"></h1>
         </div>
         <!--button wrapper-->
         <div id="wrapper-btns">
@@ -61,8 +61,25 @@
             </tr>
             </tbody>
           </table>
+        </div><br>
+        <div id="wrapper-footer">
+            <img src="assets/sword.png" alt="sword icon" id="leftSword" />
+            <img src="assets/sword.png" alt="sword icon" id="rightSword"/>
+          </div>
+          <div id="collab"> 
+            <a href="https://github.com/JaQwae">JaQwae</a>
+            <a href="https://github.com/josuepaniagua">Josue</a>
+            <a href="https://github.com/Thomasple13">Thomas</a>
+            <a href="https://github.com/Mariana21hch">Mariana</a>
+            <a href="https://github.com/richardwilborn">Richard</a>
+            <a href="https://github.com/patctan">Patrick</a>
+          </div>
         </div>
       </div>
+       <!-- <img src="assets/bow-border.png" alt="bow border" id="topLeft" />
+      <img src="assets/bow-border.png" alt="bow border" id="topRight" />-->
+      <img src="assets/bow-border.png" alt="bow border" id="bottomLeft" />
+      <img src="assets/bow-border.png" alt="bow border" id="bottomRight" />
     </fieldset>
 
 
@@ -88,7 +105,7 @@
       </div>
         <!--Enemy position-->
       <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
-          <div id="enemyPosition" class="g-start-3" style="grid-row: 3">
+          <div id="enemyPosition" class="g-start-3 flex justify-center " style="grid-row: 3">
           <img src="" alt="">
           </div>
           <!--players position-->
@@ -118,6 +135,8 @@
         00 : 00 : 00 : 000
      </div>
      <!-- timer -->
+     <img src="assets/bow-border.png" alt="bow border" id="bottomLeft" />
+    <img src="assets/bow-border.png" alt="bow border" id="bottomRight" />
     </fieldset>
 
 
@@ -185,33 +204,11 @@
       </div>
     </fieldset>
 
-    <img src="assets/bow-border.png" alt="bow border" id="topLeft" />
-    <img src="assets/bow-border.png" alt="bow border" id="topRight" />
-    <img src="assets/bow-border.png" alt="bow border" id="bottomLeft" />
-    <img src="assets/bow-border.png" alt="bow border" id="bottomRight" />
-
     <script src="./script.js"></script>
+    <script src = "assets/pokiapi.js"></script>
+    <script src="./script.js"></script>
+    <script src="./weatherAPI.js"></script>
+    <script src="./hpBar.js"></script>
+    <script src="./timer.js"></script>
   </body>
-  <footer>
-    <p>
-      Collaborators<br />
-      <img src="assets/sword.png" alt="sword icon" id="leftSword" />
-      <img src="assets/sword.png" alt="sword icon" id="rightSword" />
-
-      <a href="https://github.com/JaQwae">JaQwae</a>
-      <a href="https://github.com/josuepaniagua">Josue</a>
-      <a href="https://github.com/Thomasple13">Thomas</a>
-      <a href="https://github.com/Mariana21hch">Mariana</a>
-      <a href="https://github.com/richardwilborn">Richard</a>
-      <a href="https://github.com/patctan">Patrick</a>
-    </p>
-  </footer>
-  </body>
-
-
-  <script src = "assets/pokiapi.js"></script>
-  <script src="./script.js"></script>
-  <script src="./weatherAPI.js"></script>
-  <script src="./hpBar.js"></script>
-  <script src="./timer.js"></script>
-</html>
+  </html>
