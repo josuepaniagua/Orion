@@ -41,10 +41,11 @@ function getCurrentWeather(lat, lon) {
     });
 }
 
-const weatherConditions = ['Thunderstorm', 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
+const weatherConditions = [{'Thunderstorm':, 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
 
 function displayClimate (currentWeatherCondition) {
     console.log(currentWeatherCondition);
+
 }
 
 //display weather icon
