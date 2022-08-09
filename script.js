@@ -43,7 +43,7 @@ const enemies = [
         attack: 10,
         accuracy: 5,
         gold: 15,
-        img: './assets/mushroom-base.png',
+        img: './assets/images/mushroom-base.png',
         hurtImg: './assets/mushroom-hurt.png'
     },
     {
@@ -53,7 +53,7 @@ const enemies = [
         attack: 15,
         accuracy: 5,
         gold: 35,
-        img: './assets/bluebird.png',
+        img: './assets/images/bluebird.png',
         hurtImg: './assets/bluebird-bald.png'
     },
     {
@@ -63,7 +63,7 @@ const enemies = [
         attack: 35,
         accuracy: 3,
         gold: 100,
-        img: './assets/snake.png',
+        img: './assets/images/snake.png',
         hurtImg: './assets/snake-hurt.png'
     }
 ]
