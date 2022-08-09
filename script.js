@@ -102,7 +102,8 @@ const enemies = [
 async function text(string) {
   textWords.textContent = `${string}`;
   okBtn = document.createElement("button");
-  okBtn.textContent = "ok";
+  okBtn.setAttribute("id", "okBtn");
+  //okBtn.textContent = "ok";
   textWords.appendChild(okBtn); //style this button
   await new Promise(function (resolve, reject) {
     okBtn.addEventListener(
@@ -114,6 +115,7 @@ async function text(string) {
     );
   });
   textWords.textContent = "";
+
   okBtn.remove();
 }
 
