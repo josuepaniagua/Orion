@@ -50,7 +50,7 @@ const enemies = [
     name: "Happy Mushroom",
     maxHp: 50,
     hp: 50,
-    attack: 100,
+    attack: 10,
     accuracy: 5,
     gold: 25,
     img: "./assets/images/mushroom-base.png",
