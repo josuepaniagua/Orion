@@ -1,6 +1,4 @@
 
-
-
 // progress bar goes off of percent
 playerValue = (player1.hp/player1.maxHp) * 100
 
@@ -15,10 +13,6 @@ const playerHpDisplay = document.querySelector('#player-hp-container')
 console.log(playerHpDisplay)
 
 updatePlayerHP(playerHpDisplay, playerValue, player1.hp);
-
-
-
-
 
 
 // progress bar goes off of percent

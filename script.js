@@ -19,11 +19,19 @@ leaveShopButton = document.querySelector("#leave-btn");
 enemyImg = document.querySelector("#enemyPosition img");
 enemyName = document.querySelector("#nameEnemyDisplay");
 playerNameScreen = document.querySelector("#namePlayerDisplay");
+//work on this in a bit
 usernameInput = document.querySelector("#userInput");
+
+//Pokemon img
+pokemonImg = document.querySelector(".pokemonSprite")
+pokemonCard = document.querySelector("#playerPosition")
+pokemonCardImg = document.querySelector('#playerPosition img')
 //screens
 startScreen = document.querySelector("#wrapper-main");
 gameScreen = document.querySelector("#game-fieldset");
 shopScreen = document.querySelector("#store-fieldset");
+
+var cardImg;
 
 const player1 = {
   maxHp: 100,
@@ -32,6 +40,8 @@ const player1 = {
   accuracy: 10,
   gold: 100,
   name: "",
+  img: "",
+  pokemonName: ""
 };
 
 const enemies = [
@@ -102,15 +112,15 @@ async function text(string) {
 async function moves() {
   attackBtn = document.createElement("button");
   attackBtn.setAttribute("id", "hit");
-  runBtn = document.createElement("button");
-  runBtn.setAttribute("id", "run");
-  blockBtn = document.createElement("button");
-  blockBtn.setAttribute("id", "block");
+//   runBtn = document.createElement("button");
+//   runBtn.setAttribute("id", "run");
+//   blockBtn = document.createElement("button");
+//   blockBtn.setAttribute("id", "block");
   textWords.textContent = "What would you like to do?";
   attackBtn.textContent = "Attack";
-  runBtn.textContent = "Run";
-  blockBtn.textContent = "Block";
-  moveButtons.append(attackBtn, runBtn, blockBtn);
+//   runBtn.textContent = "Run";
+//   blockBtn.textContent = "Block";
+  moveButtons.append(attackBtn);
   return await new Promise((resolve, reject) => {
     attackBtn.addEventListener(
       "click",
@@ -127,9 +137,13 @@ async function moves() {
 
 //Logic for attacking and enemies showing up
 
-playButtonEl.addEventListener("click", () => {
+playButtonEl.addEventListener("click", async() => {
   gameScreen.style.display = "block";
   startScreen.style.display = "none";
+  if(!player1.img){
+    await Randomize()
+  }
+  pokemonCardImg.src = player1.img
   console.log("hello");
 });
 
@@ -158,13 +172,12 @@ leaveShopButton.addEventListener("click", () => {
 startGame();
 //Loop through enemies and choose to attack or run
 async function startGame() {
-  for (let i = 0; i < enemies.length; i++) {
+    for (let i = 0; i < enemies.length; i++) {
     currentEnemy = enemies[i];
     enemyImg.src = currentEnemy.img;
     enemyName.textContent = currentEnemy.name;
     playerNameScreen.textContent = player1.name;
     await text(`Round ${i + 1}: ${currentEnemy.name} has appeared!`);
-
     while (currentEnemy.hp >= 0) {
       const results = await moves();
       console.log(results);
@@ -216,6 +229,8 @@ async function attack(attacker, target) {
   target.hp = Math.max(target.hp - hit, 0);
   await text(`${target.name} now has ${target.hp}hp`);
 }
+
+
 
 //Start of the shop
 async function update() {
