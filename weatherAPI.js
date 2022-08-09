@@ -6,6 +6,7 @@ enterButton.addEventListener('click', handlingUserInput );
 function handlingUserInput() {
     let city = document.getElementById("userInput").value;
     getCoordinates(city);
+    // displayClimate(currentWeatherCondition);
 }
 
 
@@ -37,16 +38,37 @@ function getCurrentWeather(lat, lon) {
     .then(function (data) {
         // console.log(data.current.weather[0].main);
         let currentWeatherCondition = data.current.weather[0].main;
-        displayClimate(currentWeatherCondition);
+        console.log(currentWeatherCondition)
+
     });
 }
 
-const weatherConditions = [{'Thunderstorm':, 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
+const weatherConditions = ['Thunderstorm', 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
+weatherConditions[0] = 
+weatherConditions[1] =
+weatherConditions[2] =
+weatherConditions[3] =
+weatherConditions[4] =
+weatherConditions[5] = 
+weatherConditions[6] =
 
-function displayClimate (currentWeatherCondition) {
-    console.log(currentWeatherCondition);
-
+function changingWeatherBackground {
+    if (weatherConditions[0];
+        
 }
+
+//if it clear then this picture pops up, equal to css property that will change a background image
+// you would need 7 different ids in the HTML and in CSS
+// if weathercondition[0] then this id will appear else X7 to get this to be dynamic in JS
+// setattr
+// function change background will be in hand
+
+// function displayClimate (currentWeatherCondition) {
+//     console.log(currentWeatherCondition);
+
+// }
+
+
 
 //display weather icon
 // function displayingCurrentIcon (){
