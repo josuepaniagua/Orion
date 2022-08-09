@@ -167,7 +167,6 @@ leaveShopButton.addEventListener("click", () => {
 
 //Loop through enemies and choose to attack or run
 async function startGame() {
-    let dead = false
     for (let i = 0; i < enemies.length; i++) {
     currentEnemy = enemies[i];
     enemyImg.src = currentEnemy.img;
@@ -201,7 +200,6 @@ async function startGame() {
       if (player1.hp === 0) {
         await text("You have been defeated. Game Over ): (Click Home button to start again!)");
         //back to home screen
-        dead = true
         break;
       }
     }
