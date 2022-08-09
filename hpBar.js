@@ -1,3 +1,52 @@
+
+
+
+// progress bar goes off of percent
+playerValue = (player1.hp/player1.maxHp) * 100
+
+
+function updatePlayerHP (playerHp, value, playerHealthTotal) {
+    value = Math.round(value);
+    playerHpDisplay.querySelector(".player-hp-fill").style.width = `${value}%`; 
+    playerHpDisplay.querySelector("#player-hp-text").textContent = `${playerHealthTotal}`; 
+}
+
+const playerHpDisplay = document.querySelector('#player-hp-container')
+console.log(playerHpDisplay)
+
+updatePlayerHP(playerHpDisplay, playerValue, player1.hp);
+
+
+
+
+
+
+// progress bar goes off of percent
+enemiesValue = (enemies.hp/enemies.maxHp) * 100
+
+
+function updateEnemyHP (enemiesHp, value, enemiesHealthTotal) {
+    value = Math.round(value);
+    enemiesHpDisplay.querySelector(".enemy-hp-fill").style.width = `${value}%`; 
+    enemiesHpDisplay.querySelector("#enemy-hp-text").textContent = `${enemiesHealthTotal}`; 
+}
+
+const enemiesHpDisplay = document.querySelector('#enemy-hp-container')
+console.log(enemiesHpDisplay)
+
+updateEnemyHP(enemiesHpDisplay, enemiesValue, enemies[0].hp);
+
+
+
+
+
+
+
+
+
+
+
+
 // class HpBar {
 //     constructor(x, y, w, h, maxHealth, color) {
 //         this.x = x;

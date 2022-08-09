@@ -217,10 +217,6 @@ input{
     justify-content: center;
 }
 
-#tbl-player-info{
-    font-size: 20px; 
-    font-family: 'Share-TechMono', sans-serif;
-}
 
 .wrapper-poke{
     display: flex;
@@ -235,4 +231,14 @@ input{
     color:white;
 }
 
-  
+/* timer */
+.timerDisplay{
+    position: relative;
+    width: 92%;
+    left: 15%;
+    top: -210px;
+    font-family: 'Roboto mono',monospace;
+    color: #419EAE;
+    font-size: 30px;
+}
+/* timer */
