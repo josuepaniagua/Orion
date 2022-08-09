@@ -221,19 +221,11 @@ input{
     font-size: 20px; 
     font-family: 'Share-TechMono', sans-serif;
 }
+<<<<<<<<< Temporary merge branch 1
+/* timer */
 
-.wrapper-poke{
-    display: flex;
-    justify-content: center;
-}
 
-.card{
-    width: 190px;
-    height:260px;
-    background:#3B4CCA;
-    margin:15px;
-    color:white;
-}
+
 
 /* playerHp */
 #player-hp-container{
@@ -283,4 +275,20 @@ input{
     right: 5px;
     color: white;
 }
+=========
 
+.wrapper-poke{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: 190px;
+    height:260px;
+    background:#3B4CCA;
+    margin:15px;
+    color:white;
+}
+
+  
+>>>>>>>>> Temporary merge branch 2
