@@ -3,7 +3,7 @@ playButtonEl = document.querySelector("#play-btn");
 storeButtonEl = document.querySelector("#store-btn");
 textWords = document.querySelector(".wwyd-placement");
 moveButtons = document.querySelector(".wrapper-button");
-playerName = document.querySelector(".player-name");
+playerName = document.querySelector("#playerName");
 goldAmount = document.querySelector(".gold-amount");
 hpAmount = document.querySelector(".hp-amount");
 attackAmount = document.querySelector(".attack-amount");
@@ -41,7 +41,9 @@ const player1 = {
   gold: 100,
   name: "",
   img: "",
-  pokemonName: ""
+  pokemonName: "",
+  hpEl: document.querySelector(".player-hp-fill"),
+  hpTextEl: document.querySelector("#player-hp-text")
 };
 
 const enemies = [
@@ -54,6 +56,8 @@ const enemies = [
     gold: 15,
     img: "./assets/images/mushroom-base.png",
     hurtImg: "./assets/mushroom-hurt.png",
+    hpEl: document.querySelector(".enemy-hp-fill"),
+    hpTextEl: document.querySelector("#enemy-hp-text")
   },
   {
     name: "Birdy",
@@ -64,6 +68,8 @@ const enemies = [
     gold: 35,
     img: "./assets/images/bluebird.png",
     hurtImg: "./assets/bluebird-bald.png",
+    hpEl: document.querySelector(".enemy-hp-fill"),
+    hpTextEl: document.querySelector("#enemy-hp-text")
   },
   {
     name: "Ssssneaky Ssssnake",
@@ -74,6 +80,8 @@ const enemies = [
     gold: 100,
     img: "./assets/images/snake.png",
     hurtImg: "./assets/snake-hurt.png",
+    hpEl: document.querySelector(".enemy-hp-fill"),
+    hpTextEl: document.querySelector("#enemy-hp-text")
   },
 ];
 
@@ -140,6 +148,7 @@ async function moves() {
 playButtonEl.addEventListener("click", async() => {
   gameScreen.style.display = "block";
   startScreen.style.display = "none";
+  playerNameScreen.textContent = player1.name || 'Adventurer';
   if(!player1.img){
     await Randomize()
   }
@@ -176,7 +185,10 @@ async function startGame() {
     currentEnemy = enemies[i];
     enemyImg.src = currentEnemy.img;
     enemyName.textContent = currentEnemy.name;
-    playerNameScreen.textContent = player1.name;
+    playerNameScreen.textContent = player1.name || 'Adventurer';
+    console.log(player1.name)
+    updateHP(currentEnemy)
+    updateHP(player1)
     await text(`Round ${i + 1}: ${currentEnemy.name} has appeared!`);
     while (currentEnemy.hp >= 0) {
       const results = await moves();
@@ -208,6 +220,7 @@ async function startGame() {
       break;
     }
     if (i === enemies.length - 1) {
+      enemyImg.src = ''
       await text("Congratulations! You Win!");
     }
   }
@@ -227,14 +240,16 @@ async function attack(attacker, target) {
   const hit = Math.floor(Math.random() * (max - min + 1)) + min;
   await text(`${attacker.name} did ${hit} damage to ${target.name}!`);
   target.hp = Math.max(target.hp - hit, 0);
+  updateHP(target)
   await text(`${target.name} now has ${target.hp}hp`);
+
 }
 
 
 
 //Start of the shop
 async function update() {
-  playerName.textContent = `${player1.name}`;
+  playerNameScreen.textContent = player1.name || 'Adventurer';
   goldAmount.textContent = `${player1.gold}`;
   hpAmount.textContent = `${player1.hp}`;
   attackAmount.textContent = `${player1.attack}`;
@@ -244,12 +259,12 @@ async function update() {
 // event listeners for upgrade buttons
 potionButtonEl.addEventListener("click", () => {
   if (player1.hp === player1.maxHp) {
-    text("You are at full health!");
+    // text("You are at full health!");
     console.log("hello");
     return;
   }
   if (player1.gold < 10) {
-    text("You do not have enough gold!");
+    // text("You do not have enough gold!");
     return;
   }
   player1.hp = Math.min(player1.hp + 10, player1.maxHp);
@@ -260,7 +275,7 @@ potionButtonEl.addEventListener("click", () => {
 
 upAttackButton.addEventListener("click", () => {
   if (player1.gold < 10) {
-    text("You do not have enough gold!");
+    // text("You do not have enough gold!");
     return;
   }
   player1.gold = Math.max(player1.gold - 10, 0);
@@ -271,7 +286,7 @@ upAttackButton.addEventListener("click", () => {
 
 upAccuracyButton.addEventListener("click", () => {
   if (player1.gold < 10) {
-    text("You do not have enough gold!");
+    // text("You do not have enough gold!");
     return;
   }
   player1.gold = Math.max(player1.gold - 10, 0);
@@ -280,86 +295,4 @@ upAccuracyButton.addEventListener("click", () => {
   return;
 });
 
-// // // ______code for hp bar_____
-// let playerOneCanvas = document.getElementById("hPPlayer");
-// let playerOneContext = playerOneCanvas.getContext("2d");
 
-// // canvas box sizing for player one
-// const playerOneCanvasWidth = playerOneCanvas.width = 300;
-// const playerOneCanvasHeight = playerOneCanvas.height = 20;
-
-// // moving the canvas to the top and bottom
-// playerOneCanvas.style.marginTop = window.innerHeight / 2 - playerOneCanvasHeight / 2 + "px";
-
-// // link to player one health
-// let playerOneHealth = 100;
-
-// // actual health bar display for player one
-// const playerOneHpBarWidth = 300;
-// const playerOneHpBarHeight = 20;
-// const x = playerOneCanvasWidth / 2 - playerOneHpBarWidth / 2;
-// const y = playerOneCanvasHeight / 2 - playerOneHpBarHeight / 2;
-
-// const playerOneHpBar = new HpBar(x, y, playerOneHpBarWidth, playerOneHpBarHeight, playerOneHealth, "red");
-
-// const frame = function () {
-//     playerOneContext.clearRect(0, 0, playerOneCanvasWidth, playerOneCanvasHeight);
-//     playerOneHpBar.show(playerOneContext);
-//     requestAnimationFrame(frame);
-// }
-
-// // get rid of an attach to where ever damage is being taking
-// playerOneCanvas.onclick = function () {
-//     playerOneHealth -= 10;
-//     playerOneHpBar.updateHealth(playerOneHealth);
-// };
-
-// switch(choice.toLowerCase()){
-//     case '1':
-//     case 'potion':
-//     if (player1.hp === player1.maxHp) {
-//         await text ('You are at full health!')
-//         return shop();
-//     }
-//     if (player1.gold < 10) {
-//         await text('You do not have enough gold!')
-//         return shop();
-//     }
-//     player1.hp = Math.min(player1.hp + 10, player1.maxHp);
-//     player1.gold = Math.max(player1.gold - 10, 0);
-//     return shop();
-//     break;
-
-// case '2':
-// case 'upgrade':
-//     if (player1.gold < 10) {
-//         await text('You do not have enough gold!')
-//         return shop();
-//     }
-//     player1.gold = Math.max(player1.gold - 10, 0);
-//     player1.attack += 5;
-//     return shop();
-//     break;
-
-// case '3':
-// case 'accuracy':
-//     if (player1.gold < 10) {
-//         await text('You do not have enough gold!')
-//         return shop();
-//     }
-//     player1.gold = Math.max(player1.gold - 10, 0);
-//     player1.accuracy += 3;
-//     return shop();
-//     break;
-
-// case '4':
-// case 'leave':
-// default:
-//     let leaveShop = confirm('Are you sure you want to leave the shop?');
-//     if (!leaveShop) {
-//         return shop()
-//     }
-//     break;
-// }
-// }
-// Fix exit shop to return to enemy one

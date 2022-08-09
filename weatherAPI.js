@@ -4,6 +4,8 @@ enterButton.addEventListener('click', handlingUserInput );
 
 // Passes user text into the function
 function handlingUserInput() {
+    player1.name = playerName.value
+    console.log(playerName.value)
     let city = document.getElementById("userInput").value;
     getCoordinates(city);
     changingWeatherBackground(weatherConditions);
