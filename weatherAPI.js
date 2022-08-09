@@ -4,7 +4,7 @@ enterButton.addEventListener('click', handlingUserInput );
 
 // Passes user text into the function
 function handlingUserInput() {
-    player1.name = playerName.value
+    player1.name = playerName.value || 'Adventurer'
     console.log(playerName.value)
     let city = document.getElementById("userInput").value;
     getCoordinates(city);

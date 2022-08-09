@@ -19,13 +19,12 @@ leaveShopButton = document.querySelector("#leave-btn");
 enemyImg = document.querySelector("#enemyPosition img");
 enemyName = document.querySelector("#nameEnemyDisplay");
 playerNameScreen = document.querySelector("#namePlayerDisplay");
-//work on this in a bit
 usernameInput = document.querySelector("#userInput");
 
 //Pokemon img
-pokemonImg = document.querySelector(".pokemonSprite");
-pokemonCard = document.querySelector("#playerPosition");
-pokemonCardImg = document.querySelector("#playerPosition img");
+pokemonImg = document.querySelector(".pokemonSprite")
+pokemonCard = document.querySelector("#playerPosition")
+pokemonCardImg = document.querySelector('#playerPosition img')
 //screens
 startScreen = document.querySelector("#wrapper-main");
 gameScreen = document.querySelector("#game-fieldset");
@@ -38,12 +37,12 @@ const player1 = {
   hp: 100,
   attack: 10,
   accuracy: 10,
-  gold: 100,
+  gold: 15,
   name: "",
   img: "",
   pokemonName: "",
   hpEl: document.querySelector(".player-hp-fill"),
-  hpTextEl: document.querySelector("#player-hp-text"),
+  hpTextEl: document.querySelector("#player-hp-text")
 };
 
 const enemies = [
@@ -53,58 +52,44 @@ const enemies = [
     hp: 50,
     attack: 10,
     accuracy: 5,
-    gold: 15,
+    gold: 25,
     img: "./assets/images/mushroom-base.png",
-    hurtImg: "./assets/mushroom-hurt.png",
+    hurtImg: "./assets/images/mushroom-hurt.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
-    hpTextEl: document.querySelector("#enemy-hp-text"),
+    hpTextEl: document.querySelector("#enemy-hp-text")
   },
   {
     name: "Birdy",
-    maxHp: 70,
-    hp: 70,
+    maxHp: 100,
+    hp: 100,
     attack: 15,
     accuracy: 5,
     gold: 35,
     img: "./assets/images/bluebird.png",
-    hurtImg: "./assets/bluebird-bald.png",
+    hurtImg: "./assets/images/bluebird-bald.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
-    hpTextEl: document.querySelector("#enemy-hp-text"),
+    hpTextEl: document.querySelector("#enemy-hp-text")
   },
   {
     name: "Ssssneaky Ssssnake",
-    maxHp: 100,
-    hp: 100,
-    attack: 35,
+    maxHp: 150,
+    hp: 150,
+    attack: 25,
     accuracy: 3,
-    gold: 100,
+    gold: 50,
     img: "./assets/images/snake.png",
-    hurtImg: "./assets/snake-hurt.png",
+    hurtImg: "./assets/images/snake-hurt.png",
     hpEl: document.querySelector(".enemy-hp-fill"),
-    hpTextEl: document.querySelector("#enemy-hp-text"),
+    hpTextEl: document.querySelector("#enemy-hp-text")
   },
 ];
-
-// enterButtonEl.addEventListener("click",()=>{
-//     player1.name = noNullAnswers()
-//     function noNullAnswers(promptStr){
-//         player1.name = usernameInput.value
-//         if(player1.name){
-//             return answer
-//         }else {
-//             text('This is invalid!')
-//             return noNullAnswers(promptStr)
-//         }
-//     }
-// });
 
 //Function for creating text
 async function text(string) {
   textWords.textContent = `${string}`;
   okBtn = document.createElement("button");
-  okBtn.setAttribute("id", "okBtn");
-  //okBtn.textContent = "ok";
-  textWords.appendChild(okBtn); //style this button
+  okBtn.textContent = "ok";
+  textWords.appendChild(okBtn);
   await new Promise(function (resolve, reject) {
     okBtn.addEventListener(
       "click",
@@ -115,21 +100,20 @@ async function text(string) {
     );
   });
   textWords.textContent = "";
-
   okBtn.remove();
 }
 
 async function moves() {
   attackBtn = document.createElement("button");
   attackBtn.setAttribute("id", "hit");
-  //   runBtn = document.createElement("button");
-  //   runBtn.setAttribute("id", "run");
-  //   blockBtn = document.createElement("button");
-  //   blockBtn.setAttribute("id", "block");
+//   runBtn = document.createElement("button");
+//   runBtn.setAttribute("id", "run");
+//   blockBtn = document.createElement("button");
+//   blockBtn.setAttribute("id", "block");
   textWords.textContent = "What would you like to do?";
   attackBtn.textContent = "Attack";
-  //   runBtn.textContent = "Run";
-  //   blockBtn.textContent = "Block";
+//   runBtn.textContent = "Run";
+//   blockBtn.textContent = "Block";
   moveButtons.append(attackBtn);
   return await new Promise((resolve, reject) => {
     attackBtn.addEventListener(
@@ -147,15 +131,15 @@ async function moves() {
 
 //Logic for attacking and enemies showing up
 
-playButtonEl.addEventListener("click", async () => {
+playButtonEl.addEventListener("click", async() => {
+  startGame()
   gameScreen.style.display = "block";
   startScreen.style.display = "none";
-  playerNameScreen.textContent = player1.name || "Adventurer";
-  if (!player1.img) {
-    await Randomize();
+  playerNameScreen.textContent = player1.name || 'Adventurer';
+  if(!player1.img){
+    await Randomize()
   }
-  pokemonCardImg.src = player1.img;
-  console.log("hello");
+  pokemonCardImg.src = player1.img
 });
 
 storeButtonEl.addEventListener("click", () => {
@@ -180,17 +164,18 @@ leaveShopButton.addEventListener("click", () => {
   gameScreen.style.display = "block";
 });
 
-startGame();
+
 //Loop through enemies and choose to attack or run
 async function startGame() {
-  for (let i = 0; i < enemies.length; i++) {
+    for (let i = 0; i < enemies.length; i++) {
     currentEnemy = enemies[i];
     enemyImg.src = currentEnemy.img;
     enemyName.textContent = currentEnemy.name;
-    playerNameScreen.textContent = player1.name || "Adventurer";
-    console.log(player1.name);
-    updateHP(currentEnemy);
-    updateHP(player1);
+    playerNameScreen.textContent = player1.name || 'Adventurer';
+    player1.name = 'Adventurer'
+    console.log(player1.name)
+    updateHP(currentEnemy)
+    updateHP(player1)
     await text(`Round ${i + 1}: ${currentEnemy.name} has appeared!`);
     while (currentEnemy.hp >= 0) {
       const results = await moves();
@@ -213,7 +198,7 @@ async function startGame() {
         await attack(currentEnemy, player1);
       }
       if (player1.hp === 0) {
-        await text("You have been defeated. Game Over ):");
+        await text("You have been defeated. Game Over ): (Click Home button to start again!)");
         //back to home screen
         break;
       }
@@ -222,11 +207,13 @@ async function startGame() {
       break;
     }
     if (i === enemies.length - 1) {
-      enemyImg.src = "";
+      enemyImg.src = ''
       await text("Congratulations! You Win!");
     }
   }
 }
+
+
 
 //Function for attacking / missing target
 async function attack(attacker, target) {
@@ -242,13 +229,19 @@ async function attack(attacker, target) {
   const hit = Math.floor(Math.random() * (max - min + 1)) + min;
   await text(`${attacker.name} did ${hit} damage to ${target.name}!`);
   target.hp = Math.max(target.hp - hit, 0);
-  updateHP(target);
+  updateHP(target)
+  if(target.hurtImg){
+    enemyImg.src = target.hurtImg
+  }
   await text(`${target.name} now has ${target.hp}hp`);
+  if(target.hurtImg){
+    enemyImg.src = target.img
+  }
 }
 
 //Start of the shop
 async function update() {
-  playerNameScreen.textContent = player1.name || "Adventurer";
+  playerNameScreen.textContent = player1.name || 'Adventurer';
   goldAmount.textContent = `${player1.gold}`;
   hpAmount.textContent = `${player1.hp}`;
   attackAmount.textContent = `${player1.attack}`;
@@ -293,3 +286,5 @@ upAccuracyButton.addEventListener("click", () => {
   update();
   return;
 });
+
+
