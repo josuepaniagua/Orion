@@ -1,5 +1,6 @@
 var [milliseconds,seconds,minutes,hours] = [0,0,0,0];
 var timerRef = document.querySelector('.timerDisplay');
+var saveButton = document.getElementById("enter-btn");
 var int = null;
  
 document.getElementById('play-btn').addEventListener('click', ()=>{
@@ -9,7 +10,7 @@ document.getElementById('play-btn').addEventListener('click', ()=>{
     int = setInterval(displayTimer,10);
 });
  
-document.getElementById('home-btn2').addEventListener('click', (event)=>{
+document.getElementById('home-btn1').addEventListener('click', (event)=>{
     clearInterval(int);
 
     event.preventDefault();
@@ -41,40 +42,10 @@ function displayTimer(){
  timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
 }
 
-var name = document.getElementById("playerName");
 
-function saveLastScore() {
-
-  var playerinfo = {
-    name: name.value,
-    timerRef: timerRef.value,
-  };
-  localStorage.setItem("playerinfo", JSON.stringify(playerinfo));
-}
-
-function renderLastScore() {
-
-  var lastScore = JSON.parse(localStorage.getItem("playerinfo"));
-
-  if (lastScore !== null) {
-  document.getElementById("playername").innerHTML = lastScore.name;
-  document.getElementById("timer").innerHTML = lastScore.timerRef;
-  } else {
-    return;
-  }
-}
-
-var saveButton = document.getElementById("home-btn2");
-
-// saveButton.addEventListener("click", function(event) {
-// event.preventDefault();
-// saveLastScore();
-// renderLastScore();
-// });
-
-
-function init() {
-
-  renderLastScore();
-}
-init();
+saveButton.addEventListener("click",() =>{
+    var username = document.querySelector("#playerName");
+    localStorage.setItem("username", JSON.stringify(username));
+    localStorage.getItem("username", JSON.stringify(username));
+    document.getElementById("playername").innerHTML = username;
+    });

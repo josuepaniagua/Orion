@@ -230,18 +230,6 @@ canvas {
   border: solid 6px black;
 }
 
-/* timer */
-.timerDisplay {
-  position: relative;
-  width: 92%;
-  left: 15%;
-  top: -210px;
-  font-family: "Roboto mono", monospace;
-  color: #419eae;
-  font-size: 30px;
-}
-/* timer */
-
 /* playerHp */
 #player-hp-container {
   position: relative;
