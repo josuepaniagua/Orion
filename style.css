@@ -177,7 +177,7 @@ input {
   right: 119px;
   
 }
-#payerPosition {
+#playerPosition {
   width: 550px;
   height: 348px;
   background-color: transparent;
@@ -374,24 +374,31 @@ canvas {
   justify-content: center;
 }
 
-/* tailwind css*/
-module.exports = {
-  theme: {
-    screens: {
-      'sm': {'min': '500px', 'max': '767px'},
-      // => @media (min-width: 640px and max-width: 767px) { ... }
-
-      'md': {'min': '768px', 'max': '1023px'},
-      // => @media (min-width: 768px and max-width: 1023px) { ... }
-
-      'lg': {'min': '1024px', 'max': '1279px'},
-      // => @media (min-width: 1024px and max-width: 1279px) { ... }
-
-      'xl': {'min': '1280px', 'max': '1535px'},
-      // => @media (min-width: 1280px and max-width: 1535px) { ... }
-
-      '2xl': {'min': '1536px'},
-      // => @media (min-width: 1536px) { ... }
-    },
-  }
+.thunderstorm-condition{
+    background-image: url('./assets/images/Weather_Overcast_Day Medium.jpeg');
 }
+
+.drizzle-condition{
+    background-image: url('./assets/images/Weather_Fog_Day Medium.jpeg');
+}
+
+.rain-condition{
+    background-image: url('./assets/images/rain-overlay.png');
+}
+
+.snow-condition{
+    background-image: url('./assets/images/Weather_Snow_Day Medium.jpeg');
+}
+
+.atmosphere-condition{
+    background-image: url('./assets/images/Weather_Windy_Day Medium.jpeg');
+}
+
+.clear-condition{
+    background-image: url('./assets/images/Weather_Clear_Day Medium.jpeg');
+}
+
+.clouds-condition{
+    background-image: url('./assets/images/Weather_Partly_Cloudy_Day Medium.jpeg');
+}
+

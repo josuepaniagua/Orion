@@ -84,7 +84,15 @@
 
 
     <!-- GAME SCREEN -->
-    <fieldset id="game-fieldset" style="display:none">
+    <fieldset id="game-fieldset" style="display:none" class = 'clear-condition'>
+        
+          <div class = 'thunderstorm-condition'></div>
+          <div class = 'drizzle-condition'></div>
+          <div class = 'rain-condition'></div>
+          <div class = 'snow-condition'></div>
+          <div class = 'atmosphere-condition'></div>
+          <div class = 'clear-condition'></div>
+          <div class = 'clouds-condition'></div>
         <div id="wrapper-top-btn">
           <a href="#" class="top-btn" id="home-btn1">Home</a>
           <a href="#" class="top-btn" id="store-btn">Store</a>
@@ -109,7 +117,9 @@
           <img src="" alt="">
           </div>
           <!--players position-->
-          <div id="payerPosition" class="g-start-2" style="grid-row: 2"></div>
+          <div id="playerPosition" class="g-start-2" style="grid-row: 2">
+          <img src="" alt="">
+          </div>
       </div><br>
       <!--player hp -->
       <div class="textBox">
@@ -176,21 +186,21 @@
         <div class="row row-cols-4">
 
           <div class="col card pokemon hp">
-            <lable>Gold:</lable>
+            <lable>Gold: 10g</lable>
             <span id="poke-gold"></span>
             <lable>Potion</lable>
             <span id="poke-hp"></span>
           </div>
 
           <div class="col card pokemon attack">
-            <lable>Gold:</lable>
+            <lable>Gold: 10g</lable>
             <span id="poke-gold"></span>
             <lable>Attack</lable>
             <span id="poke-hp"></span>
           </div>
 
           <div class="col card pokemon accuracy">
-            <lable>Gold:</lable>
+            <lable>Gold: 10g</lable>
             <span id="poke-gold"></span>
             <lable>Accuracy</lable>
             <span id="poke-hp"></span>
@@ -211,4 +221,4 @@
     <script src="./hpBar.js"></script>
     <script src="./timer.js"></script>
   </body>
-  </html>
+</HTML>
