@@ -12,11 +12,14 @@ shopButton = document.querySelector('store-btn')
 potionButtonEl = document.querySelector('.hp')
 upAttackButton = document.querySelector('.attack')
 upAccuracyButton = document.querySelector('.accuracy')
+enterButtonEl = document.querySelector('enter-btn')
 gameScreenHomebutton = document.querySelector('#home-btn1')
 shopScreenHomeButton = document.querySelector('#home-btn2')
 leaveShopButton = document.querySelector('#leave-btn')
 enemyImg = document.querySelector("#enemyPosition img")
-
+enemyName = document.querySelector("#nameEnemyDisplay")
+playerNameScreen = document.querySelector("#namePlayerDisplay")
+// usernameInput = document.querySelector("#userInput")
 //screens
 startScreen = document.querySelector('#wrapper-main')
 gameScreen = document.querySelector('#game-fieldset')
@@ -34,7 +37,7 @@ const player1 = {
 
 const enemies = [
     {
-        name: "monster-1",
+        name: "Happy Mushroom",
         maxHp: 50,
         hp: 50,
         attack: 10,
@@ -44,7 +47,7 @@ const enemies = [
         hurtImg: './assets/mushroom-hurt.png'
     },
     {
-        name: "monster-2",
+        name: "Birdy",
         maxHp: 70,
         hp: 70,
         attack: 15,
@@ -54,7 +57,7 @@ const enemies = [
         hurtImg: './assets/bluebird-bald.png'
     },
     {
-        name: "monster-3",
+        name: "Ssssneaky Ssssnake",
         maxHp: 100,
         hp: 100,
         attack: 35,
@@ -66,21 +69,18 @@ const enemies = [
 ]
 
 
-//playbuttonEl.addEventListener("click",()=>{ 
-    //console.log('hello')
-    // await text("Welcome to the game!")
-    // player1.name = noNullAnswers('What is your name?')
-
-    // function noNullAnswers(promptStr){
-    //     const answer = prompt(promptStr)
-    //     if(answer){
-    //         return answer
-    //     }else {
-    //         await text('This is invalid!')
-    //         return noNullAnswers(promptStr)
-    //     }
-    // }
-//});
+// enterButtonEl.addEventListener("click",()=>{ 
+//     player1.name = noNullAnswers('What is your name?')
+//     function noNullAnswers(promptStr){
+//         const answer = usernameInput.textContent
+//         if(answer){
+//             return answer
+//         }else {
+//             await text('This is invalid!')
+//             return noNullAnswers(promptStr)
+//         }
+//     }
+// });
 
 
 
@@ -126,7 +126,6 @@ async function moves(){
 
 
 //Logic for attacking and enemies showing up
-// Temporary await text until we finish modal for text input
 
 playButtonEl.addEventListener("click", ()=>{
     gameScreen.style.display = 'block'
@@ -163,6 +162,8 @@ startGame()
     for(let i =0; i <enemies.length; i++){
     currentEnemy = enemies[i]
     enemyImg.src = currentEnemy.img
+    enemyName.textContent = currentEnemy.name
+    playerNameScreen.textContent = player1.name
     await text(`Round ${i + 1}: ${currentEnemy.name} has appeared!`)
 
         while(currentEnemy.hp >= 0){
@@ -199,6 +200,7 @@ startGame()
         }
     }
 }
+
 
 
 //Function for attacking / missing target
@@ -266,43 +268,40 @@ upAccuracyButton.addEventListener("click",()=>{
     return
 })
 
-// ______code for hp bar_____
-let playerOneCanvas = document.getElementById("player-hp-bar");
-let playerOneContext = playerOneCanvas.getContext("2d");
+// // // ______code for hp bar_____
+// let playerOneCanvas = document.getElementById("hPPlayer");
+// let playerOneContext = playerOneCanvas.getContext("2d");
 
-// canvas box sizing for player one
-const playerOneCanvasWidth = playerOneCanvas.width = 300;
-const playerOneCanvasHeight = playerOneCanvas.height = 20;
+// // canvas box sizing for player one
+// const playerOneCanvasWidth = playerOneCanvas.width = 300;
+// const playerOneCanvasHeight = playerOneCanvas.height = 20;
 
-// moving the canvas to the top and bottom
-playerOneCanvas.style.marginTop = window.innerHeight / 2 - playerOneCanvasHeight / 2 + "px";
+// // moving the canvas to the top and bottom
+// playerOneCanvas.style.marginTop = window.innerHeight / 2 - playerOneCanvasHeight / 2 + "px";
 
-// link to player one health
-let playerOneHealth = 100;
+// // link to player one health
+// let playerOneHealth = 100;
 
-// actual health bar display for player one
-const playerOneHpBarWidth = 300;
-const playerOneHpBarHeight = 20;
-const x = playerOneCanvasWidth / 2 - playerOneHpBarWidth / 2;
-const y = playerOneCanvasHeight / 2 - playerOneHpBarHeight / 2;
+// // actual health bar display for player one
+// const playerOneHpBarWidth = 300;
+// const playerOneHpBarHeight = 20;
+// const x = playerOneCanvasWidth / 2 - playerOneHpBarWidth / 2;
+// const y = playerOneCanvasHeight / 2 - playerOneHpBarHeight / 2;
 
-const playerOneHpBar = new HpBar(x, y, playerOneHpBarWidth, playerOneHpBarHeight, playerOneHealth, "red");
+// const playerOneHpBar = new HpBar(x, y, playerOneHpBarWidth, playerOneHpBarHeight, playerOneHealth, "red");
 
-const frame = function () {
-    playerOneContext.clearRect(0, 0, playerOneCanvasWidth, playerOneCanvasHeight);
-    playerOneHpBar.show(playerOneContext);
-    requestAnimationFrame(frame);
-}
+// const frame = function () {
+//     playerOneContext.clearRect(0, 0, playerOneCanvasWidth, playerOneCanvasHeight);
+//     playerOneHpBar.show(playerOneContext);
+//     requestAnimationFrame(frame);
+// }
 
-// get rid of an attach to where ever damage is being taking
-playerOneCanvas.onclick = function () {
-    playerOneHealth -= 10;
-    playerOneHpBar.updateHealth(playerOneHealth);
-};
+// // get rid of an attach to where ever damage is being taking
+// playerOneCanvas.onclick = function () {
+//     playerOneHealth -= 10;
+//     playerOneHpBar.updateHealth(playerOneHealth);
+// };
 
-
-
-frame();
 
     // switch(choice.toLowerCase()){
     //     case '1': 
