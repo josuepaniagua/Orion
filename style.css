@@ -252,7 +252,6 @@ canvas {
   /* overflow: hidden; */
 }
 
-/* timer */
 
 .player-hp-fill {
   width: 0%;
@@ -315,6 +314,19 @@ canvas {
   right: 5px;
   color: white;
 }
+
+#topLeft {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  #topRight {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+  }
 
 #bottomLeft {
   position: fixed;
