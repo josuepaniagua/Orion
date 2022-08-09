@@ -6,15 +6,15 @@ enterButton.addEventListener('click', handlingUserInput );
 function handlingUserInput() {
     let city = document.getElementById("userInput").value;
     getCoordinates(city);
-    changingWeatherBackground (weatherConditions);
+    changingWeatherBackground(weatherConditions);
 }
 
 
 // gets lon and lat values
-function getCoordinates(city) {
+async function getCoordinates(city) {
     let requestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+ city +'&limit=5&appid=9fa809658341d19670907599fff8fcdc';
 
-    fetch(requestUrl)
+    await fetch(requestUrl)
     .then(function (response) {
         return response.json();
     })
@@ -26,48 +26,51 @@ function getCoordinates(city) {
 }
 
 
+let currentWeatherCondition;
 //looks up weather for the city entered
-function getCurrentWeather(lat, lon) {
+async function getCurrentWeather(lat, lon) {
+    
     let requestUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat='+ lat +'&lon='+ lon +'&units=imperial&appid=9fa809658341d19670907599fff8fcdc';
     
-    fetch(requestUrl)
+    await fetch(requestUrl)
     .then(function (response) {
         return response.json();
     })
     // gets weather description
     .then(function (data) {
         // console.log(data.current.weather[0].main);
-        let currentWeatherCondition = data.current.weather[0].main;
-        console.log(currentWeatherCondition)
-
+        currentWeatherCondition = data.current.weather[0].main;
+        console.log(currentWeatherCondition);
+        changingWeatherBackground(currentWeatherCondition);
     });
 }
-
 const weatherConditions = ['Thunderstorm', 'Drizzle', 'Rain', 'Snow', 'Atmosphere', 'Clear', 'Clouds'];
 
-function changingWeatherBackground (weatherConditions) {
-    if (weatherConditions[0]){
+function changingWeatherBackground (currentWeatherCondition) {
+    if (currentWeatherCondition == weatherConditions[0]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass('thunderstorm-condition');
-    }else if (weatherConditions[1]) {
+    }else if (currentWeatherCondition == weatherConditions[1]) {
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass('drizzle-condition');
-    } else if (weatherConditions[2]){
+    } else if (currentWeatherCondition == weatherConditions[2]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass('rain-condition');
-    } else if (weatherConditions[3]){
+    } else if (currentWeatherCondition == weatherConditions[3]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("snow-condition");
-    } else if (weatherConditions[4]){
+    } else if (currentWeatherCondition == weatherConditions[4]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("atmosphere-condition");
-    } else if (weatherConditions[5]){
+    } else if (currentWeatherCondition == weatherConditions[5]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("clear-condition");
-    } else (weatherConditions[6]){
+    } else if (currentWeatherCondition == weatherConditions[6]){
         $('#game-fieldset').removeClass('clear-condition');
         $('#game-fieldset').addClass("clouds-condition");
-    };
+    } else {
+        return
+    }
 }
 
 
