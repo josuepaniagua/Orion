@@ -16,9 +16,8 @@
 .wrapper-input {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
-  flex-direction: row;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 input {
   border-radius: 5px;
@@ -30,18 +29,18 @@ input {
 }
 
 #enter-btn {
-  width: 64px;
+  width: 110px;
   background-color: white;
-  height: 27px;
-  align-items: center;
-  margin-top: 4px;
-  border-radius: 15px;
-  color: black;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  border: 2px dotted black;
+    height: 40px;
+    align-items: center;
+    margin-top: 4px;
+    border-radius: 15px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    border: 2px dotted black;
 }
 
 #enter-btn:hover {
@@ -62,11 +61,12 @@ input {
 }
 
 .randButton {
-  width: 138px;
+  width: 160px;
   height: 32px;
-  background: #3b4cca;
+  background: #3b4cca !important;
   color: white;
   border-radius: 5px;
+  margin-top: 13px;
 }
 /*"play" "Store" positioning css*/
 #wrapper-btns {
@@ -171,21 +171,21 @@ input {
 #enemyPosition {
   width: 550px;
   height: 348px;
-  background-color: #faaa6d;
+  background-color: transparent;
   border-radius: 15px;
   position: fixed;
   right: 119px;
-  box-shadow: 2px 4px 8px 6px;
+  
 }
 #playerPosition {
   width: 550px;
   height: 348px;
-  background-color: #419eae;
+  background-color: transparent;
   border-radius: 15px;
   position: fixed;
   top: 296px;
   left: 60px;
-  box-shadow: 2px 4px 8px 6px;
+  
 }
 
 .wwyd-placement {
@@ -331,25 +331,38 @@ canvas {
 }
 
 #leftSword {
-  width: 10%;
-  height: 10%;
+  width: 62px;
+  height: 65px;
   transform: rotate(180deg);
   float: left;
+  position: absolute;
+  /* bottom: 0; */
+  left: 386px;
+  top: 169%;
 }
 
 #rightSword {
-  width: 10%;
-  height: 10%;
-  float: right;
+  width: 62px;
+  height: 65px;
+  float: left;
+  position: absolute;
+  right: 386px;
+  top: 169%;
 }
 
-footer {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  right: 50%;
-  transform: translateX(50%);
+#collab{
+  position: absolute;
+    right: 37%;
+    top: 174%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
 }
+/*#wrapper-footer {
+  display:flex;
+}*/
+
 #enemy-hp-text {
   position: absolute;
   top: 0;
@@ -360,7 +373,6 @@ footer {
   display: flex;
   justify-content: center;
 }
-
 
 .thunderstorm-condition{
     background-image: url('./assets/images/Weather_Overcast_Day Medium.jpeg');
@@ -389,3 +401,4 @@ footer {
 .clouds-condition{
     background-image: url('./assets/images/Weather_Partly_Cloudy_Day Medium.jpeg');
 }
+
