@@ -29,11 +29,7 @@
       <div id="wrapper-body">
         <div class="wrapper-input">
           <input type="text" id="playerName" placeholder="Name..." >
-          <div id='search-container'>
-                <div>
-                    <textarea id="userInput" placeholder="Enter a location"></textarea>
-                </div>
-                <button type="button" class="btn search-btn btn-primary" id="search-button">Search</button>
+          <input type="text" id="userInput"  placeholder="Enter a city">
         </div> 
           <button type="button" id="enter-btn"><i class="gg-pokemon"></i>  Enter</button>
         </div>
@@ -70,7 +66,6 @@
     </fieldset>
 
 
-
     <!-- GAME SCREEN -->
     <fieldset id="game-fieldset" style="display:none">
         <div id="wrapper-top-btn">
@@ -79,15 +74,23 @@
       </div>
       <div class="wrapper-name-info">
           <span id="namePlayerDisplay">Player Name</span>
-          <span id="nameEnemyDisplay">Monster Name</span>
+          <span id="nameEnemyDisplay"></span>
       </div>
       <div class="wrapper-hp">
-          <span id="hPPlayer">00<i class="fas fa-heart-rate"></i></span>
-          <span id="hPEnemy">00<i class="fal fa-heart-rate"></i></span>
+        <div id = 'player-hp-container'>
+          <div class = 'player-hp-fill'></div>
+          <span id="player-hp-text"><i class="fas fa-heart-rate"></i></span>
+        </div>
+        <div id ='enemy-hp-container'>
+          <div class = 'enemy-hp-fill'></div>
+          <span id="enemy-hp-text"><i class="fal fa-heart-rate"></i></span>
+        </div>
       </div>
         <!--Enemy position-->
       <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
-          <div id="enemyPosition" class="g-start-3" style="grid-row: 3"></div>
+          <div id="enemyPosition" class="g-start-3" style="grid-row: 3">
+          <img src="" alt="">
+          </div>
           <!--players position-->
           <div id="payerPosition" class="g-start-2" style="grid-row: 2"></div>
       </div><br>
@@ -187,5 +190,5 @@
   <script src = "assets/pokiapi.js"></script>
   <script src="./script.js"></script>
   <script src="./weatherAPI.js"></script>
-  <script src="./timer.js"></script>
+  <script src="./hpBar.js"></script>
 </html>
